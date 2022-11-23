@@ -13,12 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('compradors', function (Blueprint $table) {
-            $table->id();
+        Schema::create('compradores', function (Blueprint $table) {
+            $table->id('idComprador');
+            $table->unsignedBigInteger('idPessoa');
+            $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')
+            ->onUpdate('restrict')->onDelete('restrict');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

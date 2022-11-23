@@ -14,9 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('enderecos', function (Blueprint $table) {
-            $table->id();
+            $table->id('idEndereco');
+            $table->string('cidadeEndereco');
+            $table->string('bairroEndereco');
+            $table->string('logradouroEndereco');
+            $table->string('numeroEndereco');
+            $table->string('cepEndereco');
+            $table->string('complementoEndereco');
+            $table->unsignedBigInteger('idPessoa');
+            $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')
+            ->onUpdate('restrict')->onDelete('restrict');
             $table->timestamps();
-        });
+            });
     }
 
     /**

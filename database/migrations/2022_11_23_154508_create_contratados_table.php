@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('contratados', function (Blueprint $table) {
-            $table->id();
+            $table->id('idContratado');
+            $table->date('dtContratacaoContratado');
+            $table->date('dtDesligamentoContratado');
+            $table->unsignedBigInteger('idPessoa');
+            $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')
+            ->onUpdate('restrict')->onDelete('restrict');
             $table->timestamps();
+
         });
     }
 
