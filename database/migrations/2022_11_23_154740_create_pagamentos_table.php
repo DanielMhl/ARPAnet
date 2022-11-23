@@ -14,7 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pagamentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('idPagamento');
+            $table->decimal('valorPagamento', 12,2);
+            $table->date('dataPagamento');
+
+            $table->unsignedBigInteger('idAssociado');
+            $table->foreign('idAssociado')->references('idAssociado')->on('associados')
+            ->onUpdate('restrict')->onDelete('restrict');
+
+            $table->unsignedBigInteger('idContratado');
+            $table->foreign('idContratado')->references('idContratado')->on('contratados')
+            ->onUpdate('restrict')->onDelete('restrict');
+
             $table->timestamps();
         });
     }

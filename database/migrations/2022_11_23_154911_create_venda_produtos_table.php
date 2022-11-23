@@ -14,7 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('venda_produtos', function (Blueprint $table) {
-            $table->id();
+            $table->id('idVendaProduto');
+            $table->integer('qtdVendaProduto');
+
+            $table->unsignedBigInteger('idVenda');
+            $table->foreign('idVenda')->references('idVenda')->on('vendas')
+            ->onUpdate('restrict')->onDelete('restrict');
+
+            $table->unsignedBigInteger('idProduto');
+            $table->foreign('idProduto')->references('idProduto')->on('produtos')
+            ->onUpdate('restrict')->onDelete('restrict');
+
             $table->timestamps();
         });
     }

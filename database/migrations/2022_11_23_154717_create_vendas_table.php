@@ -14,7 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('vendas', function (Blueprint $table) {
-            $table->id();
+            $table->id('idVenda');
+            $table->decimal('valorVenda', 12,2);
+            $table->date('dataVenda');
+            $table->string('ntFiscalVenda');
+            $table->string('formaPagamentoVenda');
+
+            $table->unsignedBigInteger('idComprador');
+            $table->foreign('idComprador')->references('idComprador')->on('compradores')
+            ->onUpdate('restrict')->onDelete('restrict');
+
             $table->timestamps();
         });
     }

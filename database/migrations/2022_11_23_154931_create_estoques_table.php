@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('estoques', function (Blueprint $table) {
-            $table->id();
+            $table->id('idEstoque');
+            $table->integer('qtdEstoque');
+
+            $table->unsignedBigInteger('idProduto');
+            $table->foreign('idProduto')->references('idProduto')->on('produtos')
+            ->onUpdate('restrict')->onDelete('restrict');
+            
             $table->timestamps();
         });
     }
