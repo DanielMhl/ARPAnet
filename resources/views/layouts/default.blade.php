@@ -49,7 +49,7 @@
 
               
               <li class="nav-item px-3 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Olá {{ auth()->user()->name}}</a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Olá  {{ auth()->user()->name}}</a>
                  
                 <ul class="dropdown-menu">
                     <li><a href="#" class="dropdown-item">Alterar Dados</a></li>

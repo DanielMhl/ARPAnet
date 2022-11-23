@@ -8,37 +8,50 @@
     {{-- <link rel="icon" href="/images/layout/icon.png"> --}}
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css ">
+    <style>
+        /* #login {
+          background-image: url("/images/layout/bg_arpanet.png");
+          height: 100vh;
+        
+      } 
+      @media (min-width: 992px) {
+        #login {
+          margin-top: -58.59px;
+        } 
+        } */
+      </style>
 </head>
-<body class="bg-primary">
-    <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle">
-        <img src="/images/layout/logo_color.png" alt="ARPAnet" height="40" class="d-block mx-auto mb-4">
+<body id="login"  class="bg-primary">
+    {{-- <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8); height: 100vh !important;"> --}}
+        <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle">
+            <img src="/images/layout/logo_arpanet.png" alt="ARPAnet" height="70" class="d-block mx-auto mb-4">
 
-        @if (Session::get('erro'))
-        <div class="alert alert-danger text-center p-2">{{ Session::get('erro') }}</div>
-        @endif
-    
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                <div class="alert alert-warning text-center p-2">{{ $error }}</div>
-            @endforeach
-        @endif
-    
-        <form class="row g-4" action="{{ route('login.auth') }}" method="POST">
-            @csrf
-            <div class="col-12">
-                <label for="email" class="form-label fs-5 fs-5">E-mail</label>
-                <input type="email" class="bg-light form-control form-control-lg" id="email" name="email">
-            </div>
-            <div class="col-12">
-                <label for="password" class="form-label fs-5 fs-5">Senha</label>
-                <input type="password" class="bg-light form-control form-control-lg" id="password" name="password">
-            </div>
-            <div class="col-12 d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
-            </div>
-        </form>
-    </div>
-
+            @if (Session::get('erro'))
+            <div class="alert alert-danger text-center p-2">{{ Session::get('erro') }}</div>
+            @endif
+        
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-warning text-center p-2">{{ $error }}</div>
+                @endforeach
+            @endif
+        
+            <form class="row g-4" action="{{ route('login.auth') }}" method="POST">
+                @csrf
+                <div class="col-12">
+                    <label for="email" class="form-label fs-5 fs-5">E-mail</label>
+                    <input type="email" class="bg-light form-control form-control-lg" id="email" name="email">
+                </div>
+                <div class="col-12">
+                    <label for="password" class="form-label fs-5 fs-5">Senha</label>
+                    <input type="password" class="bg-light form-control form-control-lg" id="password" name="password">
+                </div>
+                <div class="col-12 d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+                </div>
+            </form>
+        </div>
+    {{-- </div> --}}
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
