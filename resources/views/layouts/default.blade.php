@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
-    
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
           <a href="#"><img src="/images/layout/logo_arpanet_color.png" height="30" alt="ARPAnet"></a>
@@ -29,13 +29,13 @@
                     <li><a href="#" class="dropdown-item">Lista de Funcionários</a></li>
                     <li><hr class='dropdown-divider'/></li>
                     {{-- @foreach ($departamentos as $departamento)
-                    <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>                     
+                    <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>
                     @endforeach --}}
 
                 </ul>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="#">Cargos</a>
+                <a class="nav-link" href="{{route('produtos.index')}}">Produtos</a>
               </li>
               <li class="nav-item px-3">
                 <a class="nav-link" href="#">Departamento</a>
@@ -44,13 +44,13 @@
               @can('acessar-usuarios')
                 <li class="nav-item px-3">
                   <a class="nav-link" href="{{route('usuarios.index')}}">Usuários</a>
-                </li>                
+                </li>
               @endcan
 
-              
+
               <li class="nav-item px-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Olá  {{ auth()->user()->name}}</a>
-                 
+
                 <ul class="dropdown-menu">
                     <li><a href="#" class="dropdown-item">Alterar Dados</a></li>
                     <li><a href="{{ route('login.logout') }}" class="dropdown-item">Sair</a></li>
@@ -62,7 +62,7 @@
         </div>
       </nav>
 
-      <div class="container mb-3 p-4 bg-white shadow-sm position-relative"> 
+      <div class="container mb-3 p-4 bg-white shadow-sm position-relative">
         @yield('conteudo')
       </div>
 
@@ -70,7 +70,7 @@
         <span>
             ARPAnet <br>
             versão 0.1 <br>
-            Centro Universitário UniRios 
+            Centro Universitário UniRios
         </span>
       </footer>
 
