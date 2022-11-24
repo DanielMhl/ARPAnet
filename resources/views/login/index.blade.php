@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ARPAnet</title>
-    {{-- <link rel="icon" href="/images/layout/icon.png"> --}}
+    <link rel="icon" href="/images/layout/icon_arpa.png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css ">
     <style>
-        /* #login {
-          background-image: url("/images/layout/bg_arpanet.png");
+        #login {
+          background-image: url("/images/layout/bg_arpanet_preto.png");
           height: 100vh;
-        
+          margin: 0;
+          padding: 0;
       } 
       @media (min-width: 992px) {
         #login {
           margin-top: -58.59px;
         } 
-        } */
+        }
       </style>
 </head>
 <body id="login"  class="bg-primary">
-    {{-- <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8); height: 100vh !important;"> --}}
+    {{-- <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8); height: 100% !important; margin: 0; padding: 0;"> --}}
         <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle">
             <img src="/images/layout/logo_arpanet.png" alt="ARPAnet" height="70" class="d-block mx-auto mb-4">
 
