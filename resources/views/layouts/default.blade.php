@@ -20,7 +20,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item px-3">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="{{route('dashboard.index')}}">Home</a>
               </li>
               <li class="nav-item px-3 dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Funcionários</a>
@@ -35,7 +35,7 @@
                 </ul>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="{{route('produtos.index')}}">Produtos</a>
+                <a class="nav-link" href="#">Produtos</a> {{-- Rever a estrutura dos produtos --}}
               </li>
               <li class="nav-item px-3">
                 <a class="nav-link" href="#">Departamento</a>
@@ -66,7 +66,7 @@
         @yield('conteudo')
       </div>
 
-      <footer class="container-fluid bg-light p-3 text-center">
+      <footer class="sticky-footer container-fluid bg-light p-3 text-center">
         <span>
             ARPAnet <br>
             versão 0.1 <br>

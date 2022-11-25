@@ -8,7 +8,7 @@
     <form class="row g-4" method="POST" action="{{ route('produtos.store') }}">
         @csrf
         <div class="col-md-4">
-            <label for="nomeProduto" class="form-label fs-5 fs-5">Nome</label>
+            <label for="nomeProduto" class="form-label fs-5 fs-5">Tipo</label>
             <input type="text" class="form-control form-control-lg bg-light" id="nomeProduto" name="nome" required>
         </div>
         <div class="col-md-4">
@@ -19,10 +19,6 @@
             <label for="quantidadeProduto" class="form-label fs-5 fs-5">Quantidade</label>
             <input type="password" class="form-control form-control-lg bg-light" id="quantidadeProduto" name="quantidade" required>
         </div>
-        <div class="col-md-4">
-            <label for="precoProduto" class="form-label fs-5 fs-5">Descrição</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="precoProduto" name="preco" required>
-
         <div class="mt-5">
             <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
             <a href="{{ route('produtos.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
