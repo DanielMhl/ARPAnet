@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class Produto extends Model
 {
     protected $fillable = [
-        'nomeProduto','descricaoProduto','precoProduto','quantidadeProduto', 'valorProduto'
+        'nomeProduto','descricaoProduto',
     ];
 }

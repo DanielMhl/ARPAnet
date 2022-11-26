@@ -14,29 +14,29 @@
           height: 100vh;
           margin: 0;
           padding: 0;
-      } 
+      }
       @media (min-width: 992px) {
         #login {
           margin-top: -58.59px;
-        } 
+        }
         }
       </style>
 </head>
 <body id="login"  class="bg-primary">
     {{-- <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8); height: 100% !important; margin: 0; padding: 0;"> --}}
-        <div class="col-xl-3 bg-white p-5 shadow position-absolute top-50 start-50 translate-middle">
+        <div class="col-xl-3 bg-white p-5 rounded-3 shadow position-absolute top-50 start-50 translate-middle">
             <img src="/images/layout/logo_arpanet.png" alt="ARPAnet" height="70" class="d-block mx-auto mb-4">
 
             @if (Session::get('erro'))
             <div class="alert alert-danger text-center p-2">{{ Session::get('erro') }}</div>
             @endif
-        
+
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-warning text-center p-2">{{ $error }}</div>
                 @endforeach
             @endif
-        
+
             <form class="row g-4" action="{{ route('login.auth') }}" method="POST">
                 @csrf
                 <div class="col-12">

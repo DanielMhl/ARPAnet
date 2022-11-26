@@ -15,10 +15,11 @@
     <link rel="shortcut icon" href="/images/layout/icon_arpa.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+
 </head>
 <body>
 
-    <h1>Bem Vindo!</h1>
+    <h1 class="mb-3">Bem Vindo!</h1>
     <div class="row">
 
         <!-- Earnings (Monthly) Card Example -->
@@ -125,6 +126,7 @@
 </div>
 
 </div>
+
 </body>
 </html>
 @endsection

@@ -24,9 +24,9 @@
             @foreach ($usuarios as $usuario)
             <tr>
                 <td class="align-middle text-center">{{ $usuario->id }}</td>
-                <td class="align-middle">{{ $usuario->name }}</td>
-                <td class="align-middle">{{ $usuario->email }}</td>
-                <td class="align-middle">{{ $usuario->tipo }}</td>
+                <td class="align-middle text-center">{{ $usuario->name }}</td>
+                <td class="align-middle text-center">{{ $usuario->email }}</td>
+                <td class="align-middle text-center">{{ $usuario->tipo }}</td>
                 <td class="align-middle text-center">
                     <a href="{{ $usuario->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
                     <a href="{{ $usuario->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
