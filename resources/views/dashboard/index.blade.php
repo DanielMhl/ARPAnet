@@ -67,22 +67,22 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Endereço</th>
+                        <th>Idade</th>
+                        <th>Data de Adimissão</th>
+                        <th>Salário</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Endereço</th>
+                        <th>Idade</th>
+                        <th>Data de Adimissão</th>
+                        <th>Salário</th>
                     </tr>
                 </tfoot>
                 <tbody>

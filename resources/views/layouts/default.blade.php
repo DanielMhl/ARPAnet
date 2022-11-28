@@ -33,6 +33,8 @@
               <li class="nav-item px-3 dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" ><i id="main" class="bi bi-person"></i>Pessoas</a>
                 <ul class="dropdown-menu">
+                    <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
+                    <option value="asssociado">-----------------------</option>
                     <li><a href="#" class="dropdown-item">Associados</a></li>
                     <li><a href="#" class="dropdown-item">Contratados</a></li>
                     <li><a href="#" class="dropdown-item">Compradores</a></li>
@@ -44,11 +46,11 @@
               </li>
               <li class="nav-item px-3">
                 {{--Produtos não salvam no banco :D--}}
-                <a class="nav-link text-white" href="#"><i id="main" class="bi bi-box-seam color-white"></i>Produtos</a> {{-- Rever a estrutura dos produtos --}}
+                <a class="nav-link text-white" href="{{route('produtos.index')}}"><i id="main" class="bi bi-box-seam color-white"></i>Produtos</a> {{-- Rever a estrutura dos produtos --}}
               </li>
               <li class="nav-item px-3">
                 {{--Vendas Incompleto, faltam as ligações com o banco--}}
-                <a class="nav-link text-white" href="#"><i id="main" class="bi bi-cash-coin color-white"></i>Vendas</a>
+                <a class="nav-link text-white" href="{{route('vendas.index')}}"><i id="main" class="bi bi-cash-coin color-white"></i>Vendas</a>
               </li>
 
               @can('acessar-usuarios')
