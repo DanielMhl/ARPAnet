@@ -8,7 +8,7 @@
     <form class="row g-4" method="POST" action="{{ route('vendas.store') }}">
         @csrf
         <div class="col-md-4">
-            <label for="nomeProduto" class="form-label fs-5 fs-5">Tipo</label>
+            <label for="nomeProduto" class="form-label fs-5 fs-5">Descrição do Produto</label>
             <input type="text" class="form-control form-control-lg bg-light" id="nomeProduto" name="tipo" required>
         </div>
 

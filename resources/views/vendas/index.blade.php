@@ -15,7 +15,8 @@
             <tr class="text-center">
                 <th width="60">ID</th>
                 <th>Forma de Pagamento</th>
-                <th>Quantidade</th>
+                <th>Descrição do Produto</th>
+                <th>Quantidade (Kg)</th>
                 <th>Comprador</th>
                 <th>Valor</th>
                 <th width="160">Ação</th>
@@ -25,6 +26,7 @@
             @foreach ($vendas as $venda)
             <tr>
                 <td class="align-middle text-center">{{ $venda->idVenda }}</td>
+                <td class="align-middle text-center">{{ $venda->descricaoProduto }}</td>
                 <td class="align-middle text-center">{{ $venda->formaPagamentoVenda }}</td>
                 <td class="align-middle text-center">{{ $venda->idComprador }}</td>
                 <td class="align-middle text-center">{{ $venda->valorVenda }}</td>

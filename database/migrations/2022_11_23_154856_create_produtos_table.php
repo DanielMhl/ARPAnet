@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id('idProduto');
             $table->string('descricaoProduto');
-            $table->decimal('pesoProduto', 10,2);
-            $table->decimal('valorProduto', 12,2);
             $table->timestamps();
         });
     }

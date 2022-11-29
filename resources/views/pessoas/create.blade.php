@@ -9,22 +9,21 @@
         @csrf
         <div class="col-md-4">
             <label for="name" class="form-label fs-5 fs-5">Nome</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="name" name="name" required>
+            <input type="text" class="form-control form-control-lg bg-light" id="nomePessoa" name="nomePessoa" required>
         </div>
         <div class="col-md-4">
             <label for="email" class="form-label fs-5 fs-5">E-mail</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="email" name="email" required>
+            <input type="email" class="form-control form-control-lg bg-light" id="emailPessoa" name="emailPessoa" required>
         </div>
         <div class="col-md-4">
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="telefone" name="telefone" required>
+            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required>
         </div>
         <div class="col-md-4">
             <label for="tipo" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
             <select name="tipo" id="tipo" class="form-select form-select-lg bg-light" required>
-                <option value="asssociado">Asssociado</option>
-                <option value="contratado">Contratado</option>
-                <option value="vendedor">Vendedor</option>
+                <option value="F">Física</option>
+                <option value="J">Jurídica</option>
             </select>
         </div>
             <hr><p>Endereço</p>

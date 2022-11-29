@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('ntFiscalVenda');
             $table->string('formaPagamentoVenda');
 
-            $table->unsignedBigInteger('idComprador');
-            $table->foreign('idComprador')->references('idComprador')->on('compradores')
+            $table->unsignedBigInteger('idPessoaComprador');
+            $table->foreign('idPessoaComprador')->references('idPessoa')->on('pessoas')
             ->onUpdate('restrict')->onDelete('restrict');
 
             $table->timestamps();

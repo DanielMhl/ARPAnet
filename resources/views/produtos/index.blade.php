@@ -14,7 +14,6 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th width="60">ID</th>
-                <th>Tipo</th>
                 <th>Descrição</th>
                 <th width="160">Ação</th>
             </tr>
@@ -23,7 +22,6 @@
             @foreach ($produtos as $produto)
             <tr>
                 <td class="align-middle text-center">{{ $produto->idProduto }}</td>
-                <td class="align-middle text-center">{{ $produto->nomeProduto }}</td>
                 <td class="align-middle text-center">{{ $produto->descricaoProduto }}</td>
                 <td class="align-middle text-center">
                     <a href="{{ $produto->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>

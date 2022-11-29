@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('estoques', function (Blueprint $table) {
             $table->id('idEstoque');
-            $table->integer('qtdEstoque');
+            $table->decimal('qtdEstoque', 12,2);
 
             $table->unsignedBigInteger('idProduto');
             $table->foreign('idProduto')->references('idProduto')->on('produtos')

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('cidadeEndereco');
             $table->string('bairroEndereco');
             $table->string('logradouroEndereco');
-            $table->string('numeroEndereco');
-            $table->string('cepEndereco');
+            $table->string('numeroEndereco', 20);
+            $table->char('cepEndereco', 8);
             $table->string('complementoEndereco');
             $table->unsignedBigInteger('idPessoa');
             $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')

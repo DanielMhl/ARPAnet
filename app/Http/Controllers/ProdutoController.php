@@ -15,7 +15,7 @@ class ProdutoController extends Controller
 
     public function index(Request $request)
     {
-        $produtos = Produto::where('nomeProduto', 'like', '%'.$request->buscaProduto.'%')->orderBy('nomeProduto','asc')->get();
+        $produtos = Produto::where('descricaoProduto', 'like', '%'.$request->buscaProduto.'%')->orderBy('descricaoProduto','asc')->get();
         $totalProdutos = Produto::all()->count();
         return view('produtos.index', compact('produtos', 'totalProdutos'));
     }
