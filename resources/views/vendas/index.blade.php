@@ -3,20 +3,30 @@
 @section('title', 'Vendas')
 
 @section('conteudo')
-    <h1 class="mb-4">Vendas</h1>
 
     @if (Session::get('sucesso'))
         <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
     @endif
 
     <a href="{{ route('vendas.create') }}" class="btn btn-primary float-end mb-2 rounded-circle" title="Nova Venda"><i class="bi bi-plus fs-4"></i></a>
+    <h1 class="mb-4">Vendas</h1>
+    <a href="{{ route('vendas.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4
+    rounded-circle fs-4"><i class="bi bi-plus-lg"></i></a>
+    <p>Total de Vendas: {{ $totalVendas}}</p>
+    <form action="" method="get" class="mb-3 d-flex justify-content-end">
+        <div class="input-group me-3">
+            <input type="text" name="buscaVenda" class="form-control form-control-lg" placeholder="Nome do Produto">
+            <button class="btn btn-primary btn-lg" type="submit">Procurar</button>
+        </div>
+        <a href="{{ route('vendas.index') }}" class="btn btn-light border btn-lg">Limpar</a>
+    </form>
     <table class="table table-striped">
         <thead class="table-dark">
             <tr class="text-center">
                 <th width="60">ID</th>
-                <th>Forma de Pagamento</th>
                 <th>Descrição do Produto</th>
-                <th>Quantidade (Kg)</th>
+                <th>Forma de Pagamento</th>
+                <th>Qtnd (Kg)</th>
                 <th>Comprador</th>
                 <th>Valor</th>
                 <th width="160">Ação</th>

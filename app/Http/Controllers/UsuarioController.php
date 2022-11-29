@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Http\Request;
+
 
 class UsuarioController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         Gate::authorize('acessar-usuarios');
 
-        $usuarios = User::all()->sortBy('name');
-        return view('usuarios.index', compact('usuarios'));
+        $usuarios = User::where('name', 'like', '%'.$request->buscaUsuario.'%')->orderBy('name','asc')->get();
+        $totalUsuarios = User::all()->count();
+        return view('usuarios.index', compact('usuarios', 'totalUsuarios'));
     }
 
     public function create()
@@ -21,7 +23,7 @@ class UsuarioController extends Controller
         Gate::authorize('acessar-usuarios');
         return view('usuarios.create');
     }
-    
+
     public function store(Request $request)
     {
         Gate::authorize('acessar-usuarios');
