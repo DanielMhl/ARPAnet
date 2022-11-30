@@ -5,7 +5,7 @@
 @section('conteudo')
     <h1 class="mb-5">Cadastrar Usuario</h1>
 
-    <form class="row g-4" method="POST" action="{{ route('usuarios.store') }}">
+    <form class="row g-4" method="POST" action="{{ route('usuarios.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="col-md-4">
             <label for="name" class="form-label fs-5 fs-5">Nome</label>
@@ -22,9 +22,14 @@
         <div class="col-md-4">
             <label for="tipo" class="form-label fs-5 fs-5">Tipo do Usuário</label>
             <select name="tipo" id="tipo" class="form-select form-select-lg bg-light" required>
-                <option value="simples">Simples</option>
-                <option value="admin">Admin</option>
+                <option value="simples">Padrão</option>
+                <option value="admin">Administrador</option>
             </select>
+        </div>
+
+        <div class="col-md-8">
+            <label for="foto" class="form-label  fs-5 fs-5">Foto</label>
+            <input class="form-control form-control-lg bg-light" type="file" id="formFile" name="foto">
         </div>
 
         <div>

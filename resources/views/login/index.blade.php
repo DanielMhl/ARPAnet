@@ -8,19 +8,7 @@
     <link rel="icon" href="/images/layout/icon_arpa.png">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css ">
-    <style>
-        #login {
-          background-image: url("/images/layout/bg_arpanet_preto.png");
-          height: 100vh;
-          margin: 0;
-          padding: 0;
-      }
-      @media (min-width: 992px) {
-        #login {
-          margin-top: -58.59px;
-        }
-        }
-      </style>
+    <link rel="stylesheet" href="/css/template.css">
 </head>
 <body id="login"  class="bg-primary">
     {{-- <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8); height: 100% !important; margin: 0; padding: 0;"> --}}
@@ -48,7 +36,7 @@
                     <input type="password" class="bg-light form-control form-control-lg" id="password" name="password">
                 </div>
                 <div class="col-12 d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+                    <button type="submit" class="template-btn btn btn-lg btn-primary">Entrar</button>
                 </div>
             </form>
         </div>

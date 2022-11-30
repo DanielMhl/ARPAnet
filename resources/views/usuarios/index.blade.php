@@ -10,7 +10,7 @@
 
     <h1 class="mb-4">Usuários</h1>
     <a href="{{ route('usuarios.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4
-    rounded-circle fs-4"><i class="bi bi-plus-lg"></i></a>
+    rounded-circle fs-4" title="Cadastrar Usuário do Sistema"><i class="bi bi-plus-lg"></i></a>
     <p>Total de Usuários: {{ $totalUsuarios}}</p>
     <form action="" method="get" class="mb-3 d-flex justify-content-end">
         <div class="input-group me-3">
@@ -37,8 +37,10 @@
                 <td class="align-middle text-center">{{ $usuario->email }}</td>
                 <td class="align-middle text-center">{{ $usuario->tipo }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $usuario->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $usuario->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $usuario->id }}"><i class="bi bi-trash"></i></a>
+                    
+                    @include('usuarios.delete')
                 </td>
             </tr>
             @endforeach

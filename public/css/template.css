@@ -1,0 +1,47 @@
+:root {
+    /* VARIÁVEIS */
+    --bg: #1F49AD; /* rgb(31, 73, 173); */
+    --fnt: #ffffff;
+    /* endVARIÁVEIS */
+}
+
+#main {
+    font-size:18px;
+    padding-right: 10px;
+  }
+
+  .template-bg {
+    background-color: var(--bg);
+  }
+
+  .template-user {
+    border-radius: 15px;
+    width: 33px;
+    height: 33px;
+    margin-right: 5px;
+
+  }
+
+  /* ------------ LOGIN ------------ */
+  #login {
+    background-image: url("/images/layout/bg_arpanet_preto.png");
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+@media (min-width: 992px) {
+  #login {
+    margin-top: -58.59px;
+  }
+  }
+  /* .template-btn {
+    background-color: var(--bg);
+    color: var(--fnt);
+  }
+
+  .template-btn:focus,
+  .template-btn:hover {
+    filter: brightness(10%) !important;
+  } */
+
+    /* ------------ endLOGIN ------------ */
