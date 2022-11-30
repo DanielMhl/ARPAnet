@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-4">
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
-            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required>
+            <input type="tel" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required> <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
         </div>
         <div class="col-md-4">
             <label for="tipo" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
