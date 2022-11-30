@@ -7,20 +7,14 @@
     <title>@yield('title')</title>
     <link rel="shortcut icon" href="/images/layout/icon_arpa.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
 </head>
 <body>
 
-    <style>
-        #main {
-  font-size:18px;
-  padding-right: 10px;
-}
-    </style>
-
-    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container ">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4 template-bg">
+        <div class="container">
           <a href="#"><img src="/images/layout/logo_arpanet_color.png" height="30" alt="ARPAnet"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,7 +53,7 @@
                 </li>
               @endcan
               <li class="nav-item px-3 dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Olá  {{ auth()->user()->name}}</a>
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"><img class="template-user" src="/storage/usuarios/{{ auth()->user()->foto}}" alt="{{ auth()->user()->name }}" />{{ auth()->user()->name }}</a>
 
                 <ul class="dropdown-menu">
                     <li><a href="#" class="dropdown-item">Alterar Dados</a></li>
