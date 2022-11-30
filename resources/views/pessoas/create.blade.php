@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-4">
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
-            <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required>
+            <input type="tel" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required>
         </div>
         <div class="col-md-4">
             <label for="tipo" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
@@ -27,31 +27,70 @@
             </select>
         </div>
         <section id="cnpj/cpf"></section>
-            <hr><p>Endereço</p>
+            <hr><h2>Endereço</h2>
         <div class="col-md-4">
-            <label for="rua" class="form-label fs-5 fs-5">Rua</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="rua" name="rua" required>
+            <label for="logradouroEndereco" class="form-label fs-5 fs-5">Rua</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="ruaEndereco" name="ruaEndereco" required>
+        </div>
+        <div class="col-md-1">
+            <label for="numeroEndereco" class="form-label fs-5 fs-5">Numero</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="numeroEndereco" name="numeroEndereco" required>
         </div>
         <div class="col-md-4">
-            <label for="bairro" class="form-label fs-5 fs-5">Bairro</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="bairro" name="bairro" required>
+            <label for="bairroEndereco" class="form-label fs-5 fs-5">Bairro</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="bairroEndereco" name="bairroEndereco" required>
+        </div>
+        <div class="col-md-3">
+            <label for="complementoEndereco" class="form-label fs-5 fs-5">Complemento</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="complementoEndereco" name="complementoEndereco" required>
         </div>
         <div class="col-md-4">
-            <label for="cep" class="form-label fs-5 fs-5">CEP</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cep" name="cep" required>
+            <label for="cepEndereco" class="form-label fs-5 fs-5">CEP</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="cepEndereco" name="cepEndereco" required>
         </div>
         <div class="col-md-4">
-            <label for="cidade" class="form-label fs-5 fs-5">Cidade</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cidade" name="cidade" required>
+            <label for="cidadeEndereco" class="form-label fs-5 fs-5">Cidade</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="cidadeEndereco" name="cidadeEndereco" required>
         </div>
         <div class="col-md-4">
-            <label for="estado" class="form-label fs-5 fs-5">Estado</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="estado" name="estado" required>
+            <label for="ufEndereco" class="form-label fs-5 fs-5">Estado</label>
+            <select  class="form-select form-select-lg bg-light" id="ufEndereco" name="ufEndereco" required>
+                <option value=""></option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+                <option value="EX">Estrangeiro</option>
+            </select>
         </div>
         <div>
             <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
-    <script type="text/javascript" src="../../js/masks.js"></script>
+
 @endsection
+

@@ -28,7 +28,7 @@ select.addEventListener('change', ({target: { value }}) => {
   } else {
     input.addEventListener("keyup", cnpjMask);
   };
-  section.appendChild(input);
+  section.appendChild(input.className="form-label fs-5 fs-5");
 });
 
 const cpfMask = ({target: { value }}) => {

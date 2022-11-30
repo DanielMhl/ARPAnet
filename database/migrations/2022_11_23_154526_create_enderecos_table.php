@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id('idEndereco');
             $table->string('cidadeEndereco');
+            $table->char('ufEndereco', 2);
             $table->string('bairroEndereco');
             $table->string('logradouroEndereco');
             $table->string('numeroEndereco', 20);
