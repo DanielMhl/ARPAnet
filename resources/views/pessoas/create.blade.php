@@ -26,6 +26,7 @@
                 <option value="J">Jurídica</option>
             </select>
         </div>
+        <section id="cnpj/cpf"></section>
             <hr><p>Endereço</p>
         <div class="col-md-4">
             <label for="rua" class="form-label fs-5 fs-5">Rua</label>
@@ -52,4 +53,5 @@
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
+    <script type="text/javascript" src="../../js/masks.js"></script>
 @endsection
