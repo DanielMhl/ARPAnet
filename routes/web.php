@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\ContratadoController;
 use App\Http\Controllers\VendaController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -27,9 +28,9 @@ Route::get('/vendas/create', [VendaController::class, 'create'])->name('vendas.c
 Route::post('/vendas', [VendaController::class, 'store'])->name('vendas.store');
 
 //ROTA DE LOGIN
-Route::get('/', [LoginController::class, 'index'])->name('login.index');
-Route::post('/auth', [LoginController::class, 'auth'])->name('login.auth');
-Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('login/auth', [LoginController::class, 'auth'])->name('login.auth');
+Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logout');
 
 //ROTA DE PRODUTOS
  Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
@@ -41,13 +42,17 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
  Route::get('/pessoas/create', [PessoaController::class, 'create'])->name('pessoas.create');
  Route::post('/pessoas', [PessoaController::class, 'store'])->name('pessoas.store');
 
+//ROTA DE CONTRATADOS (Quebrado, não abrir)
+// Route::get('/contratados', [ContratadoController::class, 'index'])->name('contratados.index');
+// Route::get('/contratados/create', [ContratadoController::class, 'create'])->name('contratados.create');
+// Route::post('/contratados', [ContratadoController::class, 'store'])->name('contratados.store');
+
 //ROTAS USUARIOS
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
 Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+
+
 
 

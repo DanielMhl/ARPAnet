@@ -17,9 +17,12 @@
   font-size:18px;
   padding-right: 10px;
 }
+    #nav{
+        background-color: rgb(31, 73, 173)
+    }
     </style>
 
-    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class=" navbar navbar-expand-lg navbar-dark mb-4" id="nav">
         <div class="container ">
           <a href="#"><img src="/images/layout/logo_arpanet_color.png" height="30" alt="ARPAnet"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +67,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="#" class="dropdown-item">Alterar Dados</a></li>
                     <li><a href="{{ route('login.logout') }}" class="dropdown-item">Sair</a></li>
+                    <li><a href="#" class="dropdown-item">Ajuda</a></li>
                 </ul>
               </li>
 
