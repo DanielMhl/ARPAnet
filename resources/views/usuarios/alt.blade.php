@@ -3,9 +3,14 @@
 @section('title', 'Alterar Dados')
 
 @section('conteudo')
+
+    @if (Session::get('sucesso'))
+    <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
+    @endif
+
     <h1 class="mb-5">Alterar Dados</h1>
 
-    <form class="row g-4" method="POST" action="{{ route('usuarios.update', $usuario->id) }}" enctype="multipart/form-data">
+    <form class="row g-4" method="POST" action="{{ route('usuarios.update_alt', $usuario->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -22,12 +27,12 @@
                 <input type="text" class="form-control form-control-lg bg-light" id="email" name="email" value="{{ $usuario->email }}" required>
             </div>
             <div class="col-md-8">
-                <label for="password" class="form-label fs-5 fs-5">Trocar Senha</label>
-                <input type="password" class="form-control form-control-lg bg-light" id="password" name="password" value="" placeholder="Informe a nova senha">
-            </div>
-            <div class="col-md-8">
                 <label for="foto" class="form-label  fs-5 fs-5">Foto</label>
                 <input class="form-control form-control-lg bg-light" type="file" id="formFile" name="foto">
+            </div>
+            <div class="col-md-8">
+                <label for="password" class="form-label fs-5 fs-5 text-danger fw-bold">Trocar Senha</label>
+                <input type="password" class="form-control form-control-lg bg-light" id="password" name="password" value="" placeholder="Informe a nova senha">
             </div>
         </div>
 

@@ -15,6 +15,11 @@
     background-color: var(--bg);
   }
 
+  .template-fnt-alt {
+    color: var(--bg);
+    opacity: 0.4;
+  }
+
   .template-user {
     border-radius: 15px;
     width: 33px;
