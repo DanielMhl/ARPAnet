@@ -49,13 +49,18 @@ Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logo
 
 //ROTAS USUARIOS
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+
 Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
+
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy'); //deletar registro
+
 Route::get('/usuarios/edit/{id}', [UsuarioController::class, 'edit'])->name('usuarios.edit'); //formulário de edição
-Route::get('/usuarios/alterar/{id}', [UsuarioController::class, 'alt'])->name('usuarios.alt'); //formulário de atualização
 Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update'); //atualizar registro
+
+Route::get('/usuarios/alterar/{id}', [UsuarioController::class, 'alt'])->name('usuarios.alt'); //formulário de atualização
 Route::put('/usuarios/atualizar/{id}', [UsuarioController::class, 'update_alt'])->name('usuarios.update_alt'); //atualizar registro
+
 Route::put('/usuarios/modify/{id}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
 
 
