@@ -28,7 +28,7 @@ Route::get('/vendas/create', [VendaController::class, 'create'])->name('vendas.c
 Route::post('/vendas', [VendaController::class, 'store'])->name('vendas.store');
 
 //ROTA DE LOGIN
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/', [LoginController::class, 'index'])->name('login.index');
 Route::post('login/auth', [LoginController::class, 'auth'])->name('login.auth');
 Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logout');
 

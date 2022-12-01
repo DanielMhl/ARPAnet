@@ -13,19 +13,9 @@
 </head>
 <body>
 
-    <style>
-        #main {
-  font-size:18px;
-  padding-right: 10px;
-}
-    #nav{
-        background-color: rgb(31, 73, 173)
-    }
-    </style>
-
-    <nav class=" navbar navbar-expand-lg navbar-dark mb-4" id="nav">
-        <div class="container ">
-          <a href="#"><img src="/images/layout/logo_arpanet_color.png" height="30" alt="ARPAnet"></a>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4 template-bg">
+        <div class="container">
+          <a href="{{ route('dashboard.index') }}"><img src="/images/layout/logo_arpanet_color.png" height="30" alt="ARPAnet"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -83,14 +73,36 @@
         @yield('scripts')
       </div>
 
-      <footer class="sticky-footer container-fluid bg-light p-3 text-center">
-        <span>
-            ARPAnet <br>
-            versão 0.1 <br>
-            Centro Universitário UniRios
-        </span>
+      <footer class="sticky-footer container-fluid p-3 text-center template-bg mt-5 text-white text-lg-start mx-auto">
+          <div class="container text-center text-md-start d-flex flex-row justify-content-center align-items-start">
+            <div class="mx-auto flex-fill align-self-center">
+              <a href="{{ route('dashboard.index') }}"><img src="/images/layout/logo_branca.png" alt="ARPAnet" height="50px" /></a>
+            </div>
+            <div class="mx-auto flex-fill">
+              <h6 class="fw-bold mb-2">Início</h6>
+              <span class="d-block"><a href="{{ route('dashboard.index') }}" class="text-reset text-decoration-none">Home</a></span>
+              <span class="d-block"><a href="#" class="text-reset text-decoration-none">Associados</a></span>
+              {{-- <span class="d-block"><a href="#" class="text-reset text-decoration-none">Contratados</a></span>
+              <span class="d-block"><a href="#" class="text-reset text-decoration-none">Compradores</a></span> --}}
+            </div>
+            <div class="mx-auto flex-fill">
+              <h6 class="fw-bold mb-2">Sobre nós</h6>
+              <span class="d-block"><a href="https://www.blogger.com/profile/14072350492570167936" class="text-reset text-decoration-none">Informações</a></span>
+              <span class="d-block"><a href="http://arpareciclagem.blogspot.com" class="text-reset text-decoration-none">Blog</a></span>
+            </div>
+            <div class="mx-auto flex-fill">
+              <h6 class="fw-bold mb-2">Redes</h6>
+                <div>
+                  <a href="https://pt-br.facebook.com/reciclagemarpa/" class="me-3 text-reset" title="Facebook"><i class="bi bi-facebook template-txt"></i></a>
+                  <a href="https://www.instagram.com/arpa7395/" class="me-3 text-reset" title="Instagram"><i class="bi bi-instagram template-txt"></i></a>
+                </div>
+            </div>
+          </div>
       </footer>
-
+      <div class="text-center p-2 template-footer text-white">
+        <span class="text-white-50">&copy; Copyright -</span> ARPAnet <span class="text-white-50">by</span> Centro Universitário UniRios.
+        Todos os direitos reservados.
+      </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
