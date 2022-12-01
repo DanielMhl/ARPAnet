@@ -10,7 +10,7 @@
 
     <h1 class="mb-5">Alterar Dados</h1>
 
-    <form class="row g-4" method="POST" action="{{ route('usuarios.update_alt', $usuario->id) }}" enctype="multipart/form-data">
+    <form class="row g-4" method="POST" action="{{ route('usuarios.update_alt', $usuario->id) }}" enctype="multipart/form-data" name="alt" id="alt">
         @csrf
         @method('PUT')
 
@@ -30,15 +30,19 @@
                 <label for="foto" class="form-label  fs-5 fs-5">Foto</label>
                 <input class="form-control form-control-lg bg-light" type="file" id="formFile" name="foto">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 d-flex flex-row justify-content-end">
+                <a href="" class="btn btn-danger btn-lg mt-3 mb-3" title="Trocar Senha" data-bs-toggle="modal" data-bs-target="#modal-modifypass-{{ $usuario->id }}">Trocar Senha <i class="bi bi-key"></i></a>
+            </div>
+            {{-- <div class="col-md-8">
                 <label for="password" class="form-label fs-5 fs-5 text-danger fw-bold">Trocar Senha</label>
                 <input type="password" class="form-control form-control-lg bg-light" id="password" name="password" value="" placeholder="Informe a nova senha">
             </div>
-        </div>
+        </div> --}}
 
         <div>
-            <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+            <button type="submit" class="btn btn-primary btn-lg" form="alt">Salvar</button>
             <a href="{{ route('dashboard.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
+    @include('usuarios.modifypass')
 @endsection
