@@ -57,6 +57,13 @@ class UsuarioController extends Controller
         return view('usuarios.edit', compact('usuario'));
     }
 
+    public function alt($id)
+    {
+        $usuario = User::find($id);
+
+        return view('usuarios.alt', compact('usuario'));
+    }
+
     public function update(Request $request, $id)
     {
         $input = $request->toArray();

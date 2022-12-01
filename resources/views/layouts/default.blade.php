@@ -56,7 +56,7 @@
                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"><img class="template-user" src="/storage/usuarios/{{ auth()->user()->foto}}" alt="{{ auth()->user()->name }}" />{{ auth()->user()->name }}</a>
 
                 <ul class="dropdown-menu">
-                    <li><a href="#" class="dropdown-item">Alterar Dados</a></li>
+                    <li><a href="{{ route('usuarios.alt', auth()->user()->id) }}" class="dropdown-item">Alterar Dados</a></li>
                     <li><a href="{{ route('login.logout') }}" class="dropdown-item">Sair</a></li>
                     <li><a href="#" class="dropdown-item">Ajuda</a></li>
                 </ul>

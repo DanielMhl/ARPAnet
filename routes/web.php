@@ -53,6 +53,7 @@ Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usua
 Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy'); //deletar registro
 Route::get('/usuarios/edit/{id}', [UsuarioController::class, 'edit'])->name('usuarios.edit'); //formulário de edição
+Route::get('/usuarios/alterar/{id}', [UsuarioController::class, 'alt'])->name('usuarios.alt'); //formulário de atualização
 Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update'); //atualizar registro
 
 
