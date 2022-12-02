@@ -67,7 +67,5 @@ Route::put('/usuarios/atualizar/{id}', [UsuarioController::class, 'update_alt'])
 
 Route::put('/usuarios/modifypass/{id}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
 // function ($id) {return 'User '.$id;} , -> TESTE VARIÁVEL
-
-
-
+// array_merge(\Illuminate\Support\Facades\Route::current()->parameters(), ['locale' => 'en'])
 

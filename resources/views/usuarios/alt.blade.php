@@ -31,7 +31,7 @@
                 <input class="form-control form-control-lg bg-light" type="file" id="formFile" name="foto">
             </div>
             <div class="col-md-8 d-flex flex-row justify-content-end">
-                <a href="" class="btn btn-danger btn-lg mt-3 mb-3" title="Trocar Senha" data-bs-toggle="modal" data-bs-target="#modal-modifypass-{{ $usuario->id }}">Trocar Senha <i class="bi bi-key"></i></a>
+                <a href="" class="btn btn-danger btn-lg mt-3 mb-3" title="Trocar Senha" data-bs-toggle="modal" data-bs-target="#modal-modpass-{{ $usuario->id }}">Trocar Senha <i class="bi bi-key"></i></a>
             </div>
             {{-- <div class="col-md-8">
                 <label for="password" class="form-label fs-5 fs-5 text-danger fw-bold">Trocar Senha</label>

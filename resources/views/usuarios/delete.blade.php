@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modal-deletar-{{ $usuario->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-deletar-{{ $produtos->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,7 +9,7 @@
       <div class="modal-body">
         <p>Deseja realmente deletar o usuário?</p>
         <p><strong>{{ $usuario->name }}</strong></p>
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

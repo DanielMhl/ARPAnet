@@ -139,22 +139,56 @@ class UsuarioController extends Controller
             $input['foto']->store('public/usuarios'); // upload da foto em uma pasta
             $input['foto'] = $nomeArquivo; // guardar o nome do arquivo
         }
-
-    //     if ( !empty($input['password']) && isset($input['password'])) // verifica se a senha foi alterada
-    // {
-    //     $input['password'] = bcrypt($input['password']); // muda a senha do seu usuario já criptografada pela função bcrypt
-    //     $usuario->fill($input);
-    //     $usuario->save();
-    // } else {
-    //     $usuario->fill($input);
-    //     // $usuario->except(['password']);
-    //     $usuario->save();
-    // }
-        $usuario->fill($input);
-        $usuario->save();
+        // if ( !empty($input['password']) && isset($input['password'])) // verifica se a senha foi alterada
+        //     {
+        //         $input['password'] = bcrypt($input['password']); // muda a senha do seu usuario já criptografada pela função bcrypt
+        //         $usuario->fill($input);
+        //         $usuario->save();
+        //     } else {
+        //         $usuario->fill($input);
+        //         $usuario->except(['password']);
+        //         $usuario->save();
+        //     }
+                $usuario->fill($input);
+                $usuario->save();
 
         return redirect()->route('usuarios.alt', compact('id'))->with('sucesso', 'Cadastro alterado com sucesso!');
 
     }
+
+    public function modifypass(Request $request, $id)
+    {
+        $input = $request->toArray();
+        // ->all();
+
+        $usuario = User::find($id);
+
+        if (! Hash::check($input['password_old'], Auth::user()->password)) {
+            return redirect()
+            ->route('usuarios.modifypass')
+            ->withErrors(['password_old' => 'Senha atual está incorreta'])
+            ->withInput();
+        }
+        $validar = Validator::make(
+            $request->all(),[
+                'password' => ["required"],
+                'password_check' => 'required|same:password']
+            );
+        if ($validar->fails()) {
+            return redirect()
+            ->route('usuarios.modifypass')
+            ->withErrors($validar)
+            ->withInput();
+        }
+
+        $input['password'] = bcrypt($input['password']);
+        // $usuario->update($input);
+        $usuario->fill($input);
+        // dd($usuario);
+        $usuario->save();
+
+        return redirect()->route('usuarios.alt', compact('id'))->with('sucesso', 'Senha alterada com sucesso!');
+    }
+
 
 }
