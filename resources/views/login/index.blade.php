@@ -25,7 +25,7 @@
                 @endforeach
             @endif
 
-            <form class="row g-4" action="{{ route('login.auth') }}" method="POST">
+            <form class="row g-4 mb-3" action="{{ route('login.auth') }}" method="POST">
                 @csrf
                 <div class="col-12">
                     <label for="email" class="form-label fs-5 fs-5">E-mail</label>
@@ -39,6 +39,9 @@
                     <button type="submit" class="template-btn btn btn-lg btn-primary">Entrar</button>
                 </div>
             </form>
+            <div class="text-center fixed-bottom mb-2 template-fnt-alt" style="font-size: 1em;">
+                &copy; Copyright - ARPAnet by <br /> Centro Universitário UniRios.
+            </div>
         </div>
     {{-- </div> --}}
     <script src="/js/bootstrap.bundle.min.js"></script>

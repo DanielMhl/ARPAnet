@@ -2,6 +2,7 @@
     /* VARIÁVEIS */
     --bg: #1F49AD; /* rgb(31, 73, 173); */
     --fnt: #ffffff;
+    --bg-alt: #1C429C;
     /* endVARIÁVEIS */
 }
 
@@ -14,6 +15,11 @@
     background-color: var(--bg);
   }
 
+  .template-fnt-alt {
+    color: var(--bg);
+    opacity: 0.4;
+  }
+
   .template-user {
     border-radius: 15px;
     width: 33px;
@@ -21,6 +27,19 @@
     margin-right: 5px;
 
   }
+
+  .template-txt {
+    /* color: var(--fnt); */
+    font-size: 1.5em;
+  }
+
+  .template-footer {
+    background-color: var(--bg-alt);
+  }
+
+  /* .template-copy {
+    color: var(--bg);
+  } */
 
   /* ------------ LOGIN ------------ */
   #login {

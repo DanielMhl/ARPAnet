@@ -28,7 +28,7 @@ Route::get('/vendas/create', [VendaController::class, 'create'])->name('vendas.c
 Route::post('/vendas', [VendaController::class, 'store'])->name('vendas.store');
 
 //ROTA DE LOGIN
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/', [LoginController::class, 'index'])->name('login.index');
 Route::post('login/auth', [LoginController::class, 'auth'])->name('login.auth');
 Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logout');
 
@@ -53,12 +53,20 @@ Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logo
 
 //ROTAS USUARIOS
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+
 Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
+
 Route::delete('/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy'); //deletar registro
+
 Route::get('/usuarios/edit/{id}', [UsuarioController::class, 'edit'])->name('usuarios.edit'); //formulário de edição
 Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update'); //atualizar registro
 
+Route::get('/usuarios/alterar/{id}', [UsuarioController::class, 'alt'])->name('usuarios.alt'); //formulário de atualização
+Route::put('/usuarios/atualizar/{id}', [UsuarioController::class, 'update_alt'])->name('usuarios.update_alt'); //atualizar registro
+
+Route::put('/usuarios/modifypass/{id?}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
+// function ($id) {return 'User '.$id;} , -> TESTE VARIÁVEL
 
 
 
