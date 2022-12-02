@@ -10,7 +10,11 @@
         @method('PUT')
         <div class="col-md-4">
             <label for="descricaoProduto" class="form-label fs-5 fs-5">Descrição</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="descricaoProduto" name="descricaoProduto" required>
+            <input type="text" disabled class="form-control form-control-lg bg-light" id="descricaoProduto" name="descricaoProduto" required>
+        </div>
+        <div class="col-md-4">
+            <label for="quantidadeProduto" class="form-label fs-5 fs-5">Quantidade (Kg)</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="quantidadeProduto" placeholder="Kg" name="quantidadeProduto" required>
         </div>
         <div>
             <button type="submit" class="btn btn-primary btn-lg">Alterar</button>

@@ -47,9 +47,9 @@ Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logo
  Route::post('/pessoas', [PessoaController::class, 'store'])->name('pessoas.store');
 
 //ROTA DE CONTRATADOS (Quebrado, não abrir)
-// Route::get('/contratados', [ContratadoController::class, 'index'])->name('contratados.index');
-// Route::get('/contratados/create', [ContratadoController::class, 'create'])->name('contratados.create');
-// Route::post('/contratados', [ContratadoController::class, 'store'])->name('contratados.store');
+ Route::get('/contratados', [ContratadoController::class, 'index'])->name('contratados.index');
+ Route::get('/contratados/create', [ContratadoController::class, 'create'])->name('contratados.create');
+ Route::post('/contratados', [ContratadoController::class, 'store'])->name('contratados.store');
 
 //ROTAS USUARIOS
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
@@ -65,7 +65,7 @@ Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuari
 Route::get('/usuarios/alterar/{id}', [UsuarioController::class, 'alt'])->name('usuarios.alt'); //formulário de atualização
 Route::put('/usuarios/atualizar/{id}', [UsuarioController::class, 'update_alt'])->name('usuarios.update_alt'); //atualizar registro
 
-Route::put('/usuarios/modifypass/{id?}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
+Route::put('/usuarios/modifypass/{id}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
 // function ($id) {return 'User '.$id;} , -> TESTE VARIÁVEL
 
 

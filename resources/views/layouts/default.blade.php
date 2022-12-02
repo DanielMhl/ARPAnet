@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
 </head>
 <body>
 
@@ -29,7 +31,7 @@
                     <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
                     <option value="asssociado">-----------------------</option>
                     <li><a href="#" class="dropdown-item">Associados</a></li>
-                    <li><a href="#" class="dropdown-item">Contratados</a></li>
+                    <li><a href="{{route('contratados.index')}}" class="dropdown-item">Contratados</a></li>
                     <li><a href="#" class="dropdown-item">Compradores</a></li>
                     {{-- @foreach ($departamentos as $departamento)
                     <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>
@@ -71,7 +73,7 @@
 
       </div>
 
-      <footer class="sticky-footer container-fluid p-3 text-center template-bg mt-5 text-white text-lg-start mx-auto">
+      <footer class="container-fluid p-3 text-center template-bg mt-5 text-white text-lg-start mx-auto">
           <div class="container text-center text-md-start d-flex flex-row justify-content-center align-items-start">
             <div class="mx-auto flex-fill align-self-center">
               <a href="{{ route('dashboard.index') }}"><img src="/images/layout/logo_branca.png" alt="ARPAnet" height="50px" /></a>
@@ -102,5 +104,6 @@
         Todos os direitos reservados.
       </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/masks.js"></script>
 </body>
 </html>
