@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    {{--<script type="text/javascript" src="../../js/masks.js"></script>--}}
 </head>
 <body>
 
@@ -79,8 +78,7 @@
 
       <div class="container mb-3 p-4 bg-white shadow h-100 position-relative">
         @yield('conteudo')
-        <script type="text/javascript" src="{{ asset('js/masks.js') }}"></script>
-        @yield('scripts')
+
       </div>
 
       <footer class="sticky-footer container-fluid bg-light p-3 text-center">

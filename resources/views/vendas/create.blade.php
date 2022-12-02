@@ -27,7 +27,14 @@
             <option value="comprador2">Comprador 2</option>
             </select>
         </div>
-        {{-- Ajustar de acordo com o banco --}}
+        <div class="col-md-4">
+            <label for="produtos"></label>
+            <input type="checkbox" name="produto[]" value="papel">Pedra
+            <input type="checkbox" name="produto[]" value="papel">Papel
+            <input type="checkbox" name="produto[]" value="papel">Tesoura
+
+        </div>
+            {{-- Ajustar de acordo com o banco --}}
         <div class="col-md-4">
             <label for="#" class="form-label fs-5 fs-5">Quantidade</label>
             <input type="text" class="form-control form-control-lg bg-light" id="#" name="#" required>

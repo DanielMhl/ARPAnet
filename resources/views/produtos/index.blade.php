@@ -34,8 +34,10 @@
                 <td class="align-middle text-center">{{ $produto->idProduto }}</td>
                 <td class="align-middle text-center">{{ $produto->descricaoProduto }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $produto->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $produto->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ route('produtos.edit', $produto->idProduto) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $produto->idProduto }}"><i class="bi bi-trash"></i></a>
+
+                    @include('produtos.delete')
                 </td>
             </tr>
             @endforeach
