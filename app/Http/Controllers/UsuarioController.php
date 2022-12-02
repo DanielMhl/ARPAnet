@@ -20,40 +20,6 @@ class UsuarioController extends Controller
         return view('usuarios.index', compact('usuarios', 'totalUsuarios'));
     }
 
-    public function modifypass($id, Request $request)
-    {
-        $input = $request->toArray();
-        // ->all();
-
-        $usuario = User::find($id);
-
-        if (!Hash::check($input['password_old'], Auth::user()->password)) {
-            return redirect()
-            ->route('usuarios.modifypass')
-            ->withErrors(['password_old' => 'Senha atual está incorreta'])
-            ->withInput();
-        }
-        $validar = Validator::make(
-            $request->all(),[
-                'password' => ["required"],
-                'password_check' => 'required|same:password']
-            );
-        if ($validar->fails()) {
-            return redirect()
-            ->route('usuarios.modifypass')
-            ->withErrors($validar)
-            ->withInput();
-        }
-
-        $input['password'] = bcrypt($input['password']);
-        // $usuario->update($input);
-        $usuario->fill($input);
-        // dd($usuario);
-        $usuario->save();
-
-        return redirect()->route('usuarios.alt', compact('id'))->with('sucesso', 'Senha alterada com sucesso!');
-    }
-
     public function create()
     {
         Gate::authorize('acessar-usuarios');
@@ -102,25 +68,30 @@ class UsuarioController extends Controller
         return view('usuarios.alt', compact('usuario'));
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $input = $request->toArray();
-    //     $usuario = User::find($id);
+    public function update(Request $request, $id)
+    {
+        $usuario = User::find($id);
+        $input = $request->toArray();
 
-    //     if(!empty($input['foto']) && $input['foto']->isValid())
-    //     {
-    //         Storage::delete('public/usuarios/'.$usuario['foto']);
-    //         $nomeArquivo = $input['foto']->hashName(); // obtém a hash do nome do arquivo
-    //         $input['foto']->store('public/usuarios'); // upload da foto em uma pasta
-    //         $input['foto'] = $nomeArquivo; // guardar o nome do arquivo
-    //     }
+        if(!empty($input['foto']) && $input['foto']->isValid())
+        {
+            Storage::delete('public/usuarios/'.$usuario['foto']);
+            $nomeArquivo = $input['foto']->hashName(); // obtém a hash do nome do arquivo
+            $input['foto']->store('public/usuarios'); // upload da foto em uma pasta
+            $input['foto'] = $nomeArquivo; // guardar o nome do arquivo
+        }
+        if($input['password'] != null){
+            $input['password'] = bcrypt($input['password']);
+        }else{
+            $input['password'] = $usuario['password'];
+        }
 
-    //     $usuario->fill($input);
-    //     $usuario->save();
+        $usuario->fill($input);
+        $usuario->save();
 
-    //     return redirect()->route('usuarios.index')->with('sucesso', 'Usuário alterado com sucesso!');
+        return redirect()->route('usuarios.index')->with('sucesso', 'Usuário alterado com sucesso!');
 
-    // }
+    }
 
     public function update_alt(Request $request, $id)
     {
@@ -156,7 +127,7 @@ class UsuarioController extends Controller
 
     }
 
-    public function modifypass(Request $request, $id)
+    public function modifypass($id,Request $request )
     {
         $input = $request->toArray();
         // ->all();

@@ -26,7 +26,7 @@
                 <th width="60">ID</th>
                 <th>Descrição do Produto</th>
                 <th>Forma de Pagamento</th>
-                <th>Qtd. (Kg)</th>
+                <th>Qtnd (Kg)</th>
                 <th>Comprador</th>
                 <th>Valor</th>
                 <th width="160">Ação</th>

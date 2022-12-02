@@ -3,7 +3,6 @@
 @section('title', 'Cadastrar Produto')
 
 @section('conteudo')
-
     <h1 class="mb-5">Cadastrar Produto</h1>
 
     <form class="row g-4" method="POST" action="{{ route('produtos.store') }}">

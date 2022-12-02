@@ -9,8 +9,7 @@
         @csrf
         <div class="col-md-4">
             <label for="nomeProduto" class="form-label fs-5 fs-5">Descrição do Produto</label>
-            {{-- <input type="text" class="form-control form-control-lg bg-light" id="nomeProduto" name="tipo" required> --}}
-            <select name="nomeProduto" id="nomeProduto"></select>
+            <input type="text" class="form-control form-control-lg bg-light" id="nomeProduto" name="tipo" required>
         </div>
 
         <div class="col-md-4">
