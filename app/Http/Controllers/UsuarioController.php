@@ -39,8 +39,11 @@ class UsuarioController extends Controller
             $input['foto'] = null;
          }
         $input['password'] = bcrypt($input['password']);
-       // $idUsuario=User::create($input);
-       // dd($idUsuario->id);
+        User::create($input); 
+        /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
+            // $idUsuario=User::create($input);
+            // dd($idUsuario->id);
+        /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
 
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário cadastrado com sucesso');
     }
