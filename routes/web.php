@@ -61,9 +61,7 @@ Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuari
 Route::get('/usuarios/alterar/{id}', [UsuarioController::class, 'alt'])->name('usuarios.alt'); //formulário de atualização
 Route::put('/usuarios/atualizar/{id}', [UsuarioController::class, 'update_alt'])->name('usuarios.update_alt'); //atualizar registro
 
-Route::put('/usuarios/modifypass/{id?}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
+Route::put('/usuarios/modifypass/{id}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
 // function ($id) {return 'User '.$id;} , -> TESTE VARIÁVEL
-
-
-
+// array_merge(\Illuminate\Support\Facades\Route::current()->parameters(), ['locale' => 'en'])
 
