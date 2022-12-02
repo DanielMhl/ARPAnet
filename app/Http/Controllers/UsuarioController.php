@@ -121,7 +121,7 @@ class UsuarioController extends Controller
 
     }
 
-    public function modifypass(Request $request, $id)
+    public function modifypass(Request $request, $id = )
     {
         $input = $request->toArray();
         // ->all();

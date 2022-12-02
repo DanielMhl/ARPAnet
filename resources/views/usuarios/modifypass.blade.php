@@ -9,9 +9,10 @@
         <div class="modal-body"> <!-- d-flex flex-column align-items-center -->
           {{-- <p>Deseja realmente deletar o usuário?</p> --}}
           {{-- <p><strong>{{ $usuario->name }}</strong></p> --}}
-                <form action="{{ route('usuarios.modifypass', [ 'id' => $usuario->id ]) }}" method="POST" class="g-4" name="modifypass" id="modifypass" enctype="multipart/form-data" >
+                <form action="{{ route( 'usuarios.modifypass' , [ 'id' => $usuario->id ]) }}" method="POST" class="g-4" name="modifypass" id="modifypass" enctype="multipart/form-data" >
                     @csrf
                     @method('PUT')
+                   <input type="hidden" name="id" value="{{ $usuario->id }}">
                     <div class="d-flex flex-column align-items-center">
                         <div class="row pb-2">
                             <div class="col-md-12">
