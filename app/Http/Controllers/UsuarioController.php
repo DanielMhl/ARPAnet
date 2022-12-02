@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 class UsuarioController extends Controller
 {
+    /* LISTA DE USUÁRIOS */
     public function index(Request $request)
     {
         Gate::authorize('acessar-usuarios');
@@ -19,7 +20,9 @@ class UsuarioController extends Controller
         $totalUsuarios = User::all()->count();
         return view('usuarios.index', compact('usuarios', 'totalUsuarios'));
     }
+    /* endINDEX DE USUÁRIOS */
 
+    /* CADASTRAR USUÁRIOS */
     public function create()
     {
         Gate::authorize('acessar-usuarios');
@@ -47,7 +50,9 @@ class UsuarioController extends Controller
 
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário cadastrado com sucesso');
     }
+    /* endCADASTRAR USUÁRIOS */
 
+    /* DELETAR USUÁRIOS */
     public function destroy($id)
     {
         $usuario = User::find($id);
@@ -56,19 +61,14 @@ class UsuarioController extends Controller
 
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário deletado com sucesso!');
     }
+    /* endDELETAR USUÁRIOS */
 
+    /* EDITAR USUÁRIOS */
     public function edit($id)
     {
         $usuario = User::find($id);
 
         return view('usuarios.edit', compact('usuario'));
-    }
-
-    public function alt($id)
-    {
-        $usuario = User::find($id);
-
-        return view('usuarios.alt', compact('usuario'));
     }
 
     public function update(Request $request, $id)
@@ -94,6 +94,15 @@ class UsuarioController extends Controller
 
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário alterado com sucesso!');
 
+    }
+    /* endEDITAR USUÁRIOS */
+
+    /* ALTERAR DADOS USUÁRIO LOGADO */
+    public function alt($id)
+    {
+        $usuario = User::find($id);
+
+        return view('usuarios.alt', compact('usuario'));
     }
 
     public function update_alt(Request $request, $id)
@@ -129,7 +138,64 @@ class UsuarioController extends Controller
         return redirect()->route('usuarios.alt', compact('id'))->with('sucesso', 'Cadastro alterado com sucesso!');
 
     }
+    /* endALTERAR DADOS USUÁRIO LOGADO */
 
+    /* TROCAR SENHA USUÁRIO LOGADO */
+
+
+    public function updatepass(Request $request, $id)
+    {
+        $usuario = User::find($id);
+        $input = $request->toArray();
+
+        /* VERIFICAR SE A SENHA ATUAL DIGITADA ESTÁ CORRETA */
+        if (! Hash::check($input['password_old'], Auth::user()->password)) {
+        /* SENHA INCORRETA: RETORNA O ERRO */
+            // $modal = '#modal-updatepass-'.$id;
+            return redirect()
+            ->route('usuarios.alt', compact('id'))
+            //  ->route('usuarios.alt', compact('id', 'modal'))
+             ->with('erro', 'Não foi possível modificar sua senha. A senha atual está incorreta.');
+             /* ->withErrors(['password_old' => 'Senha atual está incorreta'])
+             ->withInput(); */
+        }
+
+        /* VALIDAR O INPUT: SENHA NOVA = SENHA DE CONFIRMAÇÃO? */
+        $validar = Validator::make(
+            $request->all(),[
+                'password' => ["required"],
+                'password_check' => 'required|same:password']
+            );
+        /* SE A VALIDAÇÃO TIVER ERROS, RETORNA O ERRO */
+        if ($validar->fails()) {
+            // $modal = '#modal-updatepass-'.$id;
+            return redirect()
+            ->route('usuarios.alt', compact('id'))
+            //  ->route('usuarios.alt', compact('id', 'modal'))
+             ->with('erro', 'Não foi possível modificar sua senha. Senha informada e senha de confirmação não coincidem.');
+        //     ->route('usuarios.updatepass', compact('id'))
+        //     ->withErrors($validar)
+        //     ->withInput();
+        }
+
+        /* CRIPTOGRAFAR A SENHA */
+        $input['password'] = bcrypt($input['password']);
+
+
+        /* SALVAR */
+        $usuario->fill($input);
+        $usuario->save();
+
+        return redirect()->route('usuarios.alt', compact('id'))->with('sucesso', 'Senha alterada com sucesso!');
+    }
+    /* endTROCAR SENHA USUÁRIO LOGADO */
+
+
+
+
+
+    /* CEMITÉRIO ✞ */
+    /*
     public function modifypass($id,Request $request )
     {
         $input = $request->toArray();
@@ -163,6 +229,7 @@ class UsuarioController extends Controller
 
         return redirect()->route('usuarios.alt', compact('id'))->with('sucesso', 'Senha alterada com sucesso!');
     }
-
+    */
+    
 
 }

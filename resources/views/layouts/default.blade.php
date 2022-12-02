@@ -56,8 +56,8 @@
 
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('usuarios.alt', auth()->user()->id) }}" class="dropdown-item">Alterar Dados</a></li>
-                    <li><a href="{{ route('login.logout') }}" class="dropdown-item">Sair</a></li>
                     <li><a href="#" class="dropdown-item">Ajuda</a></li>
+                    <li><a href="{{ route('login.logout') }}" class="dropdown-item">Sair</a></li>
                 </ul>
               </li>
 

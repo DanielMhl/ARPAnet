@@ -6,6 +6,16 @@
 
     @if (Session::get('sucesso'))
     <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
+    @elseif (Session::get('erro'))
+    <div class="alert alert-danger text-center p-2">{{ Session::get('erro') }}</div>
+    {{-- @elseif (Session::get('erro')) --}}
+    {{-- <div class="ls-modal ls-opened" id="modal-updatepass-{{ $usuario->id }}"> --}}
+    {{-- @elseif (Session::get('erro'))
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('#modal-updatepass-4').modal('show');
+            });
+        </script> --}}
     @endif
 
     <h1 class="mb-5">Alterar Dados</h1>
@@ -31,7 +41,7 @@
                 <input class="form-control form-control-lg bg-light" type="file" id="formFile" name="foto">
             </div>
             <div class="col-md-8 d-flex flex-row justify-content-end">
-                <a href="" class="btn btn-danger btn-lg mt-3 mb-3" title="Trocar Senha" data-bs-toggle="modal" data-bs-target="#modal-modpass-{{ $usuario->id }}">Trocar Senha <i class="bi bi-key"></i></a>
+                <a href="" class="btn btn-danger btn-lg mt-3 mb-3" title="Trocar Senha" data-bs-toggle="modal" data-bs-target="#modal-updatepass-{{ $usuario->id }}">Trocar Senha <i class="bi bi-key"></i></a>
             </div>
             {{-- <div class="col-md-8">
                 <label for="password" class="form-label fs-5 fs-5 text-danger fw-bold">Trocar Senha</label>
@@ -44,5 +54,6 @@
             <a href="{{ route('dashboard.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
-    @include('usuarios.modifypass')
+    @include('usuarios.updatepass')
+    
 @endsection
