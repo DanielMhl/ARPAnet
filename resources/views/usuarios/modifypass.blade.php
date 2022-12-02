@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modal-modifypass-{{ $usuario->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-modpass-{{ $usuario->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -9,6 +9,7 @@
         <div class="modal-body"> <!-- d-flex flex-column align-items-center -->
           {{-- <p>Deseja realmente deletar o usuário?</p> --}}
           {{-- <p><strong>{{ $usuario->name }}</strong></p> --}}
+          {{-- {{ $url = route('usuarios.modifypass', ['id' => $usuario->id]); }} --}}
                 <form action="{{ route( 'usuarios.modifypass' , [ 'id' => $usuario->id ]) }}" method="POST" class="g-4" name="modifypass" id="modifypass" enctype="multipart/form-data" >
                     @csrf
                     @method('PUT')
