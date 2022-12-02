@@ -32,4 +32,32 @@ class ProdutoController extends Controller
 
         return redirect()->route('produtos.index')->with('Sucesso', 'Produto cadastrado com sucesso!');
     }
+    public function destroy($idProduto)
+    {
+        $produto = Produto::find($idProduto);
+        $produto->delete();
+
+        return redirect()->route('produtos.index')->with('Sucesso', 'Produto deletado com sucesso!');
+    }
+
+    public function edit($idProduto)
+    {
+        $produto = Produto::find($idProduto);
+
+        return view('produtos.edit', compact('produto'));
+    }
+
+    public function update(Request $request, $idProduto)
+    {
+        $input = $request->toArray();
+        $produto = Produto::find($idProduto);
+
+        $produto->fill($input);
+        $produto->save();
+
+        return redirect()->route('produtos.index')->with('Sucesso', 'Produto alterado com sucesso!');
+
+    }
+
+
 }

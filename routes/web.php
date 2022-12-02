@@ -36,6 +36,10 @@ Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logo
  Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
  Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
  Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
+ Route::delete('/produtos/{idProduto}', [ProdutoController::class, 'destroy'])->name('produtos.destroy'); //deletar registro
+ Route::get('/produtos/edit/{idProduto}', [ProdutoController::class, 'edit'])->name('produtos.edit'); //formulário de edição
+ Route::put('/produtos/{idProduto}', [ProdutoController::class, 'update'])->name('produtos.update'); //atualizar registro
+
 
  //ROTA DE PESSOAS
  Route::get('/pessoas', [PessoaController::class, 'index'])->name('pessoas.index');

@@ -39,7 +39,9 @@ class UsuarioController extends Controller
             $input['foto'] = null;
          }
         $input['password'] = bcrypt($input['password']);
-        User::create($input);
+       // $idUsuario=User::create($input);
+       // dd($idUsuario->id);
+
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário cadastrado com sucesso');
     }
 
