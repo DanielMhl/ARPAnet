@@ -3,7 +3,6 @@
 @section('title', 'Alterar Dados')
 
 @section('conteudo')
-
     @if (Session::get('sucesso'))
     <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
     @elseif (Session::get('erro'))
@@ -55,5 +54,14 @@
         </div>
     </form>
     @include('usuarios.updatepass')
-    
+    {{-- TENTATIVA --}}
+ {{-- <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+    <script>
+        alert("Hello World!");
+        $(document).ready(function(){$('#modal-updatepass-4').modal('show');});
+    </script>    --}}
 @endsection
