@@ -24,9 +24,8 @@
         <thead class="table-dark">
             <tr class="text-center">
                 <th width="60">ID</th>
-                <th>Descrição do Produto</th>
                 <th>Forma de Pagamento</th>
-                <th>Qtnd (Kg)</th>
+                <th>Data</th>
                 <th>Comprador</th>
                 <th>Valor</th>
                 <th width="160">Ação</th>
@@ -36,13 +35,13 @@
             @foreach ($vendas as $venda)
             <tr>
                 <td class="align-middle text-center">{{ $venda->idVenda }}</td>
-                <td class="align-middle text-center">{{ $venda->descricaoProduto }}</td>
-                <td class="align-middle text-center">{{ $venda->formaPagamentoVenda }}</td>
-                <td class="align-middle text-center">{{ $venda->idComprador }}</td>
+                <td class="align-middle text-center">{{ $venda->descFormaPagamento }}</td>
+                <td class="align-middle text-center">{{ $venda->dataVenda }}</td>
+                <td class="align-middle text-center">{{ $venda->nomePessoa }}</td>
                 <td class="align-middle text-center">{{ $venda->valorVenda }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $venda->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $venda->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ $venda->idVenda }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="{{ $venda->idVenda }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             @endforeach
