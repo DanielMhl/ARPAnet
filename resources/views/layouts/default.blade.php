@@ -54,10 +54,10 @@
               <li class="nav-item px-3 dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"><img class="template-user" src="/storage/usuarios/{{ auth()->user()->foto}}" alt="{{ auth()->user()->name }}" />{{ auth()->user()->name }}</a>
 
-                <ul class="dropdown-menu">
-                    <li><a href="{{ route('usuarios.alt', auth()->user()->id) }}" class="dropdown-item">Alterar Dados</a></li>
-                    <li><a href="#" class="dropdown-item">Ajuda</a></li>
-                    <li><a href="{{ route('login.logout') }}" class="dropdown-item">Sair</a></li>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="{{ route('usuarios.alt', auth()->user()->id) }}" class="dropdown-item" title="Alterar Dados, Senha, Foto de Perfil"><i class="bi bi-gear"></i> Configurações</a></li>
+                    <li><a href="#" class="dropdown-item" title="Ajuda e Suporte"><i class="bi bi-question-circle"></i> Ajuda e Suporte</a></li>
+                    <li><a href="{{ route('login.logout') }}" class="dropdown-item" title="Sair da aplicação"><i class="bi bi-box-arrow-in-right"></i> Sair</a></li>
                 </ul>
               </li>
 
@@ -70,36 +70,37 @@
         @yield('conteudo')
 
       </div>
-
-      <footer class="sticky-footer container-fluid p-3 text-center template-bg mt-5 text-white text-lg-start mx-auto">
-          <div class="container text-center text-md-start d-flex flex-row justify-content-center align-items-start">
-            <div class="mx-auto flex-fill align-self-center">
-              <a href="{{ route('dashboard.index') }}"><img src="/images/layout/logo_branca.png" alt="ARPAnet" height="50px" /></a>
+      <div class="template-footer-fixed">
+        <footer class="sticky-footer container-fluid p-3 text-center template-bg mt-5 text-white text-lg-start mx-auto">
+            <div class="container text-center text-md-start d-flex flex-row justify-content-center align-items-start">
+              <div class="mx-auto flex-fill align-self-center">
+                <a href="{{ route('dashboard.index') }}"><img src="/images/layout/logo_branca.png" alt="ARPAnet" height="50px" /></a>
+              </div>
+              <div class="mx-auto flex-fill">
+                <h6 class="fw-bold mb-2">Início</h6>
+                <span class="d-block"><a href="{{ route('dashboard.index') }}" class="text-reset text-decoration-none">Home</a></span>
+                <span class="d-block"><a href="#" class="text-reset text-decoration-none">Associados</a></span>
+                {{-- <span class="d-block"><a href="#" class="text-reset text-decoration-none">Contratados</a></span>
+                <span class="d-block"><a href="#" class="text-reset text-decoration-none">Compradores</a></span> --}}
+              </div>
+              <div class="mx-auto flex-fill">
+                <h6 class="fw-bold mb-2">Sobre nós</h6>
+                <span class="d-block"><a href="https://www.blogger.com/profile/14072350492570167936" class="text-reset text-decoration-none">Informações</a></span>
+                <span class="d-block"><a href="http://arpareciclagem.blogspot.com" class="text-reset text-decoration-none">Blog</a></span>
+              </div>
+              <div class="mx-auto flex-fill">
+                <h6 class="fw-bold mb-2">Redes</h6>
+                  <div>
+                    <a href="https://pt-br.facebook.com/reciclagemarpa/" class="me-3 text-reset" title="Facebook"><i class="bi bi-facebook template-txt"></i></a>
+                    <a href="https://www.instagram.com/arpa7395/" class="me-3 text-reset" title="Instagram"><i class="bi bi-instagram template-txt"></i></a>
+                  </div>
+              </div>
             </div>
-            <div class="mx-auto flex-fill">
-              <h6 class="fw-bold mb-2">Início</h6>
-              <span class="d-block"><a href="{{ route('dashboard.index') }}" class="text-reset text-decoration-none">Home</a></span>
-              <span class="d-block"><a href="#" class="text-reset text-decoration-none">Associados</a></span>
-              {{-- <span class="d-block"><a href="#" class="text-reset text-decoration-none">Contratados</a></span>
-              <span class="d-block"><a href="#" class="text-reset text-decoration-none">Compradores</a></span> --}}
-            </div>
-            <div class="mx-auto flex-fill">
-              <h6 class="fw-bold mb-2">Sobre nós</h6>
-              <span class="d-block"><a href="https://www.blogger.com/profile/14072350492570167936" class="text-reset text-decoration-none">Informações</a></span>
-              <span class="d-block"><a href="http://arpareciclagem.blogspot.com" class="text-reset text-decoration-none">Blog</a></span>
-            </div>
-            <div class="mx-auto flex-fill">
-              <h6 class="fw-bold mb-2">Redes</h6>
-                <div>
-                  <a href="https://pt-br.facebook.com/reciclagemarpa/" class="me-3 text-reset" title="Facebook"><i class="bi bi-facebook template-txt"></i></a>
-                  <a href="https://www.instagram.com/arpa7395/" class="me-3 text-reset" title="Instagram"><i class="bi bi-instagram template-txt"></i></a>
-                </div>
-            </div>
-          </div>
-      </footer>
-      <div class="text-center p-2 template-footer text-white">
-        <span class="text-white-50">&copy; Copyright -</span> ARPAnet <span class="text-white-50">by</span> Centro Universitário UniRios.
-        Todos os direitos reservados.
+        </footer>
+        <div class="text-center p-2 template-footer text-white">
+          <span class="text-white-50">&copy; Copyright -</span> ARPAnet <span class="text-white-50">by</span> Centro Universitário UniRios.
+          Todos os direitos reservados.
+        </div>
       </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -40,6 +40,12 @@
   /* .template-copy {
     color: var(--bg);
   } */
+  /* .template-footer-fixed {
+      bottom: 0;
+      left: 0;
+      position: relative;
+      width: 100%;
+  } */
 
   /* ------------ LOGIN ------------ */
   #login {
