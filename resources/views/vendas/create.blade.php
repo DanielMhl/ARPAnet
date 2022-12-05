@@ -51,7 +51,7 @@
         </table>
 
         <div class="mt-5">
-            <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-cart-plus"></i>Finalizar Venda</button>
+            <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-cart-plus"></i> Finalizar Venda</button>
             <a href="{{ route('vendas.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
         </div>
     </form>

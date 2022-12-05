@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pessoa;
 use Illuminate\Http\Request;
+use App\Models\Pessoa;
+use App\Models\Endereco;
 
 class PessoaController extends Controller
 {
@@ -27,8 +28,12 @@ class PessoaController extends Controller
 
     public function store(Request $request)
     {
+
+      // $endereco = $request->toArray();
+
         $input = $request->toArray();
         Pessoa::create($input);
+        $idPessoa=Endereco::create($input);
 
         return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa cadastrada com sucesso!');
     }

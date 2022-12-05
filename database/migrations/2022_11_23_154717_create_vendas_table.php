@@ -16,10 +16,8 @@ return new class extends Migration
         Schema::create('vendas', function (Blueprint $table) {
             $table->id('idVenda');
             $table->decimal('valorVenda', 12,2);
-            $table->date('dataVenda');
-            $table->string('ntFiscalVenda');
+            $table->string('ntFiscalVenda')->nullable(true);
             $table->string('formaPagamentoVenda');
-
             $table->unsignedBigInteger('idPessoaComprador');
             $table->foreign('idPessoaComprador')->references('idPessoa')->on('pessoas')
             ->onUpdate('restrict')->onDelete('restrict');

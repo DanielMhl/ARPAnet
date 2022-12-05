@@ -17,20 +17,21 @@
         </div>
         <div class="col-md-4">
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
-            <input type="tel" placeholder="(99) 9999-9999" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required> <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
+            <input type="tel" placeholder="(99) 9999-9999" title="Número de telefone precisa ser no formato (99) 9999-9999" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required> <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
         </div>
         <div class="col-md-4">
-            <label for="tipo" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
-            <select name="tipo" id="tipo" class="form-select form-select-lg bg-light" required>
+            <label for="tipoPessoa" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
+            <select name="tipoPessoa" id="tipoPessoa" class="form-select form-select-lg bg-light" onchange="controlTipo(this.value)" required>
+                <option value=""></option>
                 <option value="F">Física</option>
                 <option value="J">Jurídica</option>
             </select>
         </div>
-        <section id="cnpj/cpf"></section>
+
             <hr><h2>Endereço</h2>
         <div class="col-md-4">
             <label for="logradouroEndereco" class="form-label fs-5 fs-5">Rua</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="ruaEndereco" name="ruaEndereco" required>
+            <input type="text" class="form-control form-control-lg bg-light" id="logradouroEndereco" name="logradouroEndereco" required>
         </div>
         <div class="col-md-1">
             <label for="numeroEndereco" class="form-label fs-5 fs-5">Numero</label>
@@ -91,6 +92,16 @@
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
+
+    <script>
+        function controlTipo(element) {
+            let sec = getElementById('cnpj/cpf')
+            if(element.value=='F') {
+                sec.appendChild(input.className="form-label fs-5 fs-5");
+            }
+
+        }
+    </script>
 
 @endsection
 

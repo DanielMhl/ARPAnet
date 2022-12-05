@@ -25,7 +25,6 @@
             <tr class="text-center">
                 <th width="60">ID</th>
                 <th>Forma de Pagamento</th>
-                <th>Data</th>
                 <th>Comprador</th>
                 <th>Valor</th>
                 <th width="160">Ação</th>
@@ -36,7 +35,6 @@
             <tr>
                 <td class="align-middle text-center">{{ $venda->idVenda }}</td>
                 <td class="align-middle text-center">{{ $venda->descFormaPagamento }}</td>
-                <td class="align-middle text-center">{{ $venda->dataVenda }}</td>
                 <td class="align-middle text-center">{{ $venda->nomePessoa }}</td>
                 <td class="align-middle text-center">{{ $venda->valorVenda }}</td>
                 <td class="align-middle text-center">
