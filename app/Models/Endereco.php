@@ -20,8 +20,8 @@ class Endereco extends Model
         'idPessoa',
     ];
 
-    // public function pessoa()
-    // {
-    //     return $this->belongsTo(Pessoa::class, 'idPessoa');
-    // }
+    public function pessoa()
+    {
+        return $this->belongsTo(Pessoa::class, 'idPessoa');
+    }
 }

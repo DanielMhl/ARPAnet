@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-</head>
+    </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark mb-4 template-bg">

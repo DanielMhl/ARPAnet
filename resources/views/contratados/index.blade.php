@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Produtos')
+@section('title', 'Contratados')
 
 @section('conteudo')
 
@@ -36,8 +36,8 @@
                 <td class="align-middle text-center">{{ $contratado->pessoa->nomePessoa }}</td>
                 <td class="align-middle text-center">{{ $contratado->pessoa->telefonePessoa }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $produto->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $produto->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ $contratado->idContratado }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="{{ $contratado->idContratado }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             @endforeach

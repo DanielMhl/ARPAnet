@@ -5,6 +5,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\PessoaController;
 use App\Http\Controllers\ContratadoController;
+use App\Http\Controllers\AssociadoController;
 use App\Http\Controllers\VendaController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -33,23 +34,28 @@ Route::post('login/auth', [LoginController::class, 'auth'])->name('login.auth');
 Route::get('login/logout', [LoginController::class, 'logout'])->name('login.logout');
 
 //ROTA DE PRODUTOS
- Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
- Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
- Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
- Route::delete('/produtos/{idProduto}', [ProdutoController::class, 'destroy'])->name('produtos.destroy'); //deletar registro
- Route::get('/produtos/edit/{idProduto}', [ProdutoController::class, 'edit'])->name('produtos.edit'); //formulário de edição
- Route::put('/produtos/{idProduto}', [ProdutoController::class, 'update'])->name('produtos.update'); //atualizar registro
+Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
+Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
+Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
+Route::delete('/produtos/{idProduto}', [ProdutoController::class, 'destroy'])->name('produtos.destroy'); //deletar registro
+Route::get('/produtos/edit/{idProduto}', [ProdutoController::class, 'edit'])->name('produtos.edit'); //formulário de edição
+Route::put('/produtos/{idProduto}', [ProdutoController::class, 'update'])->name('produtos.update'); //atualizar registro
 
 
  //ROTA DE PESSOAS
- Route::get('/pessoas', [PessoaController::class, 'index'])->name('pessoas.index');
- Route::get('/pessoas/create', [PessoaController::class, 'create'])->name('pessoas.create');
- Route::post('/pessoas', [PessoaController::class, 'store'])->name('pessoas.store');
+Route::get('/pessoas', [PessoaController::class, 'index'])->name('pessoas.index');
+Route::get('/pessoas/create', [PessoaController::class, 'create'])->name('pessoas.create');
+Route::post('/pessoas', [PessoaController::class, 'store'])->name('pessoas.store');
 
-//ROTA DE CONTRATADOS (Quebrado, não abrir)
-// Route::get('/contratados', [ContratadoController::class, 'index'])->name('contratados.index');
-// Route::get('/contratados/create', [ContratadoController::class, 'create'])->name('contratados.create');
-// Route::post('/contratados', [ContratadoController::class, 'store'])->name('contratados.store');
+//ROTA DE CONTRATADOS
+Route::get('/contratados', [ContratadoController::class, 'index'])->name('contratados.index');
+Route::get('/contratados/create', [ContratadoController::class, 'create'])->name('contratados.create');
+Route::post('/contratados', [ContratadoController::class, 'store'])->name('contratados.store');
+
+//ROTA DE ASSOCIADOS
+Route::get('/associados', [AssociadoController::class, 'index'])->name('associados.index');
+Route::get('/associados/create', [AssociadoController::class, 'create'])->name('associados.create');
+Route::post('/associados', [AssociadoController::class, 'store'])->name('associados.store');
 
 //ROTAS USUARIOS
 //INDEX
