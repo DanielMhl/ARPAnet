@@ -95,7 +95,6 @@
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
-<<<<<<< HEAD
     {{-- <script>
 
 function controleTipo() {
@@ -121,8 +120,6 @@ function controleTipo() {
 
         }
     </script> --}}
-=======
->>>>>>> 12e8f08b438c59654a4494737688bccc040bc125
 
 @endsection
 
