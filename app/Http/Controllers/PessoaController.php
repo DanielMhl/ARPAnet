@@ -16,7 +16,9 @@ class PessoaController extends Controller
 
     public function index(Request $request)
     {
-        $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get();
+        // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get();
+        $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(10);
+        
         $totalPessoas = Pessoa::all()->count();
         return view('pessoas.index', compact('pessoas', 'totalPessoas'));
     }
@@ -33,8 +35,15 @@ class PessoaController extends Controller
 
         $input = $request->toArray();
         Pessoa::create($input);
-        $idPessoa=Endereco::create($input);
-
+        $idPessoa = Pessoa::create($input);
+        // $input['idPessoa'] = $idPessoa;
+        $input['idPessoa'] = $idPessoa->id;
+        // dd($input);
+        Endereco::create($input);
+        /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
+            // $idUsuario=User::create($input);
+            // dd($idUsuario->id);
+        /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
         return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa cadastrada com sucesso!');
     }
 }

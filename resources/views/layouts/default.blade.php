@@ -103,5 +103,7 @@
         </div>
       </div>
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/template.js"></script>
+    {{-- <script scr="{{ asset('js/template.js') }}"></script> --}}
 </body>
 </html>
