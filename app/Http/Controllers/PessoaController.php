@@ -34,19 +34,6 @@ class PessoaController extends Controller
         return view('pessoas.index', compact('pessoas', 'totalPessoas'));
     }
 
-
-    // public function endereco($idPessoa, Request $request)
-    // {
-    //     $pessoas = Pessoa::find($idPessoa);
-    //     $endereco = Endereco::where('idPessoa', $idPessoa)
-    //     ->where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')
-    //     ->orderBy('nomePessoa','asc')->get();
-
-    //     $totalPessoas = Pessoa::where('idPessoa', $idPessoa)->count();
-    //     return view('pessoas.index', compact('pessoas', 'totalPessoas', 'endereco'));
-    // }
-
-
     public function create()
     {
         return view('pessoas.create');

@@ -16,14 +16,3 @@ function controleTipo() {
         document.getElementById("div-cpfPessoa").required = true;
     }
 };
-
-function tipoPessoa(){
-var tipoPessoa = document.getElementById("tipoPessoa").value;
-
-var $ordenadorBanners = document.getElementById('ordem-banner');
-if ($activeBtn.checked) {
-    $ordenadorBanners.required = true;
-}else{
-    $ordenadorBanners.required = false;
-}
-}

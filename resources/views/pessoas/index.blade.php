@@ -41,7 +41,6 @@
                 <td class="align-middle text-center">@if ($pessoa->tipoPessoa == "F") Física @elseif ($pessoa->tipoPessoa == "J") Jurídica @endif</td>
                 <td class="align-middle text-center">@if ($pessoa->tipoPessoa == "F") {{ $pessoa->cpfPessoa }} @elseif ($pessoa->tipoPessoa == "J") {{ $pessoa->cnpjPessoa  }} @endif</td>
                 <td class="align-middle text-center">{{ $pessoa->logradouroEndereco }}</td>
-                {{-- <td class="align-middle text-center">@if (is_null($enderecos('logradouroEndereco')->where('idPessoa', $pessoa->idPessoa))) Endereço não Informado. @else {{ $enderecos('logradouroEndereco')->where('idPessoa', $pessoa->idPessoa) }} @endif</td> --}}
                 <td class="align-middle text-center">
                     <a href="{{ $pessoa->idPessoa }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
                     <a href="{{ $pessoa->idPessoa }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
