@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pessoa;
 use App\Models\Endereco;
+use Illuminate\Support\Facades\DB;
 
 class PessoaController extends Controller
 {
@@ -17,7 +18,13 @@ class PessoaController extends Controller
     public function index(Request $request)
     {
         // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get();
-        $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(10);
+        // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(10);
+         $pessoas = DB::table('pessoas')
+         ->join('enderecos', 'enderecos.idPessoa', '=', 'pessoas.idPessoa', 'inner')
+         ->where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(30);
+        //  dd($pessoas);
+        // $endereco = Pessoa::with('endereco')->findOrFail(20);
+        // dd($endereco);
         // ->with('endereco')
         // $idPessoa = $pessoas->toArray();
         // dd($idPessoa);
