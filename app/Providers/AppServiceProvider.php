@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Endereco;
+use Exception;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 

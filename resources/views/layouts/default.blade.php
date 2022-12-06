@@ -28,6 +28,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
                     <option value="asssociado">-----------------------</option>
+                    <li><a href="{{route('pessoas.index')}}" class="dropdown-item">Pessoas</a></li>
                     <li><a href="#" class="dropdown-item">Associados</a></li>
                     <li><a href="#" class="dropdown-item">Contratados</a></li>
                     <li><a href="#" class="dropdown-item">Compradores</a></li>

@@ -18,10 +18,27 @@ class PessoaController extends Controller
     {
         // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get();
         $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(10);
-        
+        // ->with('endereco')
+        // $idPessoa = $pessoas->toArray();
+        // dd($idPessoa);
+        // $idPessoas = $idPessoa['idPessoa'];
+        // $endereco = Endereco::where('idPessoa', $idPessoas);
         $totalPessoas = Pessoa::all()->count();
         return view('pessoas.index', compact('pessoas', 'totalPessoas'));
     }
+
+
+    // public function endereco($idPessoa, Request $request)
+    // {
+    //     $pessoas = Pessoa::find($idPessoa);
+    //     $endereco = Endereco::where('idPessoa', $idPessoa)
+    //     ->where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')
+    //     ->orderBy('nomePessoa','asc')->get();
+
+    //     $totalPessoas = Pessoa::where('idPessoa', $idPessoa)->count();                          
+    //     return view('pessoas.index', compact('pessoas', 'totalPessoas', 'endereco'));
+    // }
+
 
     public function create()
     {
@@ -34,11 +51,11 @@ class PessoaController extends Controller
       // $endereco = $request->toArray();
 
         $input = $request->toArray();
-        Pessoa::create($input);
+        // Pessoa::create($input);
         $idPessoa = Pessoa::create($input);
-        // $input['idPessoa'] = $idPessoa;
+        $input['idPessoa'] = $idPessoa;
         $input['idPessoa'] = $idPessoa->id;
-        // dd($input);
+        //dd($input);
         Endereco::create($input);
         /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
             // $idUsuario=User::create($input);

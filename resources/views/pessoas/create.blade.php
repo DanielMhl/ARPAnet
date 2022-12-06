@@ -17,11 +17,11 @@
 
         <div class="col-md-3" id="div-cpfPessoa" style="display: block">
             <label for="cpfPessoa" class="form-label fs-5 fs-5">CPF</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa" required>
+            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa">
         </div>
         <div class="col-md-3" id="div-cnpjPessoa" style="display: none">
             <label for="cnpjPessoa" class="form-label fs-5 fs-5">CNPJ</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa" required>
+            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa">
         </div>
         <div class="col-md-7">
             <label for="name" class="form-label fs-5 fs-5">Nome</label>
@@ -31,14 +31,6 @@
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
             <input type="tel" placeholder="(99) 9999-9999" title="Número de telefone precisa ser no formato (99) 9999-9999" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required> <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
         </div>
-<!-- -->
-{{-- <div>
-    <label for="cpf" class="form-label fw-bold">CPF</label>
-    <input type="text" name="cpf" class="form-control form-control-lg bg-light" value=""
-        required>
-</div> --}}
-
-<!-- -->
             <hr><h2>Endereço</h2>
         <div class="col-md-4">
             <label for="logradouroEndereco" class="form-label fs-5 fs-5">Rua</label>
@@ -103,31 +95,6 @@
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
-    {{-- <script>
-        
-function controleTipo() {
-    var tipoPessoa = document.getElementById("tipoPessoa").value;
-    // document.getElementById("demo").innerHTML = "You selected: " + tipoPessoa;
-    if (tipoPessoa == "J") {
-        document.getElementById("div-cpfPessoa").style.display = "none";
-        document.getElementById('div-cnpjPessoa').style.display = "block";
-    }
-    else {
-        document.getElementById("div-cpfPessoa").style.display = "block";
-        document.getElementById('div-cnpjPessoa').style.display = "none";
-    }
-};
-    </script> --}}
-{{-- 
-    <script>
-        function controlTipo(element) {
-            let sec = getElementById('cnpj/cpf')
-            if(element.value=='F') {
-                sec.appendChild(input.className="form-label fs-5 fs-5");
-            }
-
-        }
-    </script> --}}
 
 @endsection
 

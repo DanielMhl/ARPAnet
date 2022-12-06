@@ -16,4 +16,9 @@ class Pessoa extends Model
         'cnpjPessoa',
         'telefonePessoa',
     ];
+
+    public function endereco()
+    {
+        return $this->hasOne(Endereco::class, 'idPessoa');
+    }
 }
