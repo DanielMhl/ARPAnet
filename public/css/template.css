@@ -6,6 +6,10 @@
     /* endVARIÁVEIS */
 }
 
+.pagination {
+  justify-content: center;
+}
+
 #main {
     font-size:18px;
     padding-right: 10px;

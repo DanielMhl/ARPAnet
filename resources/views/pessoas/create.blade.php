@@ -17,11 +17,11 @@
 
         <div class="col-md-3" id="div-cpfPessoa" style="display: block">
             <label for="cpfPessoa" class="form-label fs-5 fs-5">CPF</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa" >
+            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa">
         </div>
         <div class="col-md-3" id="div-cnpjPessoa" style="display: none">
             <label for="cnpjPessoa" class="form-label fs-5 fs-5">CNPJ</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa" >
+            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa">
         </div>
         <div class="col-md-7">
             <label for="name" class="form-label fs-5 fs-5">Nome</label>
@@ -31,14 +31,6 @@
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
             <input type="tel" placeholder="(99) 9999-9999" title="Número de telefone precisa ser no formato (99) 9999-9999" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required> <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
         </div>
-<!-- -->
-{{-- <div>
-    <label for="cpf" class="form-label fw-bold">CPF</label>
-    <input type="text" name="cpf" class="form-control form-control-lg bg-light" value=""
-        required>
-</div> --}}
-
-<!-- -->
             <hr><h2>Endereço</h2>
         <div class="col-md-4">
             <label for="logradouroEndereco" class="form-label fs-5 fs-5">Rua</label>
@@ -103,6 +95,7 @@
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
+<<<<<<< HEAD
     {{-- <script>
 
 function controleTipo() {
@@ -128,6 +121,8 @@ function controleTipo() {
 
         }
     </script> --}}
+=======
+>>>>>>> 12e8f08b438c59654a4494737688bccc040bc125
 
 @endsection
 

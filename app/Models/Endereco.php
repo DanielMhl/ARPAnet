@@ -19,4 +19,9 @@ class Endereco extends Model
         'complementoEndereco',
         'idPessoa',
     ];
+
+    public function pessoa()
+    {
+        return $this->belongsTo(Pessoa::class, 'idPessoa');
+    }
 }

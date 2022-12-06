@@ -28,13 +28,10 @@
                 <ul class="dropdown-menu">
                     <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
                     <option value="asssociado">-----------------------</option>
-                    <li><a href="{{route('associados.index')}}" class="dropdown-item">Associados</a></li>
-                    <li><a href="{{route('contratados.index')}}" class="dropdown-item">Contratados</a></li>
-                    <li><a href="#" class="dropdown-item">Compradores</a></li>
-                    {{-- @foreach ($departamentos as $departamento)
-                    <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>
-                    @endforeach --}}
-
+                    <li><a href="{{route('pessoas.index')}}" class="dropdown-item">Pessoas</a></li>
+                    <li><a href="{{ route('associados.index') }}" class="dropdown-item">Associados</a></li>
+                    <li><a href="{{ route('contratados.index') }}" class="dropdown-item">Contratados</a></li>
+                    <li><a href="{{ route('associados.index') }}" class="dropdown-item">Compradores</a></li>
                 </ul>
               </li>
               <li class="nav-item px-3">
