@@ -4,30 +4,41 @@
 
 @section('conteudo')
     <h1 class="mb-5">Cadastrar Pessoa</h1>
-
     <form class="row g-4" method="POST" action="{{ route('pessoas.store') }}">
         @csrf
-        <div class="col-md-4">
+        <div class="col-md-2">
+            <label for="tipoPessoa" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
+            <select name="tipoPessoa" id="tipoPessoa" class="form-select form-select-lg bg-light"
+            onchange="controleTipo()" required>
+                <option value="F" selected="selected">Física</option>
+                <option value="J">Jurídica</option>
+            </select>
+        </div>
+
+        <div class="col-md-3" id="div-cpfPessoa" style="display: block">
+            <label for="cpfPessoa" class="form-label fs-5 fs-5">CPF</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa" required>
+        </div>
+        <div class="col-md-3" id="div-cnpjPessoa" style="display: none">
+            <label for="cnpjPessoa" class="form-label fs-5 fs-5">CNPJ</label>
+            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa" required>
+        </div>
+        <div class="col-md-7">
             <label for="name" class="form-label fs-5 fs-5">Nome</label>
             <input type="text" class="form-control form-control-lg bg-light" id="nomePessoa" name="nomePessoa" required>
-        </div>
-        <div class="col-md-4">
-            <label for="email" class="form-label fs-5 fs-5">E-mail</label>
-            <input type="email" class="form-control form-control-lg bg-light" id="emailPessoa" name="emailPessoa" required>
         </div>
         <div class="col-md-4">
             <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
             <input type="tel" placeholder="(99) 9999-9999" title="Número de telefone precisa ser no formato (99) 9999-9999" class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required> <!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" -->
         </div>
-        <div class="col-md-4">
-            <label for="tipoPessoa" class="form-label fs-5 fs-5">Tipo da Pessoa</label>
-            <select name="tipoPessoa" id="tipoPessoa" class="form-select form-select-lg bg-light" onchange="controlTipo(this.value)" required>
-                <option value=""></option>
-                <option value="F">Física</option>
-                <option value="J">Jurídica</option>
-            </select>
-        </div>
+<!-- -->
+{{-- <div>
+    <label for="cpf" class="form-label fw-bold">CPF</label>
+    <input type="text" name="cpf" class="form-control form-control-lg bg-light" value=""
+        required>
+</div> --}}
 
+<!-- -->
             <hr><h2>Endereço</h2>
         <div class="col-md-4">
             <label for="logradouroEndereco" class="form-label fs-5 fs-5">Rua</label>
@@ -92,7 +103,22 @@
             <a href="{{ route('pessoas.index') }}" class="btn btn-danger btn-lg"> Cancelar</a>
         </div>
     </form>
-
+    {{-- <script>
+        
+function controleTipo() {
+    var tipoPessoa = document.getElementById("tipoPessoa").value;
+    // document.getElementById("demo").innerHTML = "You selected: " + tipoPessoa;
+    if (tipoPessoa == "J") {
+        document.getElementById("div-cpfPessoa").style.display = "none";
+        document.getElementById('div-cnpjPessoa').style.display = "block";
+    }
+    else {
+        document.getElementById("div-cpfPessoa").style.display = "block";
+        document.getElementById('div-cnpjPessoa').style.display = "none";
+    }
+};
+    </script> --}}
+{{-- 
     <script>
         function controlTipo(element) {
             let sec = getElementById('cnpj/cpf')
@@ -101,7 +127,7 @@
             }
 
         }
-    </script>
+    </script> --}}
 
 @endsection
 

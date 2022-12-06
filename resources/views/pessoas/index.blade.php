@@ -33,10 +33,10 @@
         <tbody>
             @foreach ($pessoas as $pessoa)
             <tr>
-                <td class="align-middle text-center">{{ $pessoa->id }}</td>
-                <td class="align-middle text-center">{{ $pessoa->name }}</td>
-                <td class="align-middle text-center">{{ $pessoa->telefone }}</td>
-                <td class="align-middle text-center">{{ $pessoa->tipo }}</td>
+                <td class="align-middle text-center">{{ $pessoa->idPessoa }}</td>
+                <td class="align-middle text-center">{{ $pessoa->nomePessoa }}</td>
+                <td class="align-middle text-center">{{ $pessoa->telefonePessoa }}</td>
+                <td class="align-middle text-center">@if ($pessoa->tipoPessoa == "F") Física @elseif ($pessoa->tipoPessoa == "J") Jurídica @endif</td>
                 <td class="align-middle text-center">
                     <a href="{{ $pessoa->id }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
                     <a href="{{ $pessoa->id }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
@@ -46,6 +46,6 @@
         </tbody>
     </table>
 
-    {{-- {{ $cargos->links('paginacao') }} --}}
+    {{ $pessoas->links() }}
 @endsection
 

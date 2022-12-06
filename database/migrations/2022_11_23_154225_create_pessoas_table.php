@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id('idPessoa');
             $table->string('nomePessoa');
             $table->char('tipoPessoa', 1);
-            $table->char('cpfPessoa', 11);
-            $table->char('cnpjPessoa', 14);
-            $table->string('telefonePessoa', 20);
+            $table->char('cpfPessoa', 11)->nullable();
+            $table->char('cnpjPessoa', 14)->nullable();
+            $table->string('telefonePessoa', 20)->nullable();
             $table->timestamps();
         });
     }
