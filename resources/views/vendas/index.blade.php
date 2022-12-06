@@ -38,9 +38,7 @@
                 <td class="align-middle text-center">{{ $venda->nomePessoa }}</td>
                 <td class="align-middle text-center">{{ $venda->valorVenda }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $venda->idVenda }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $venda->idVenda }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
-                </td>
+                    <a href="#" class="btn btn-primary" title="Editar"><i class="bi bi-search"></i></a>                </td>
             </tr>
             @endforeach
         </tbody>

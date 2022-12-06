@@ -18,7 +18,7 @@ class PessoaController extends Controller
     {
         // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get();
         $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(10);
-        
+
         $totalPessoas = Pessoa::all()->count();
         return view('pessoas.index', compact('pessoas', 'totalPessoas'));
     }
@@ -28,15 +28,20 @@ class PessoaController extends Controller
         return view('pessoas.create');
     }
 
+
     public function store(Request $request)
     {
 
       // $endereco = $request->toArray();
 
         $input = $request->toArray();
-        Pessoa::create($input);
+        //Pessoa::create($input);
+        $input = str_replace(".","", $input);
+        $input = str_replace("-","", $input);
+        $input = str_replace("/","", $input);
+
         $idPessoa = Pessoa::create($input);
-        // $input['idPessoa'] = $idPessoa;
+        $input['idPessoa'] = $idPessoa;
         $input['idPessoa'] = $idPessoa->id;
         // dd($input);
         Endereco::create($input);

@@ -16,4 +16,5 @@ class Pessoa extends Model
         'cnpjPessoa',
         'telefonePessoa',
     ];
+
 }

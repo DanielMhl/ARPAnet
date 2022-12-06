@@ -17,11 +17,11 @@
 
         <div class="col-md-3" id="div-cpfPessoa" style="display: block">
             <label for="cpfPessoa" class="form-label fs-5 fs-5">CPF</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa" required>
+            <input type="text" class="form-control form-control-lg bg-light" id="cpfPessoa" name="cpfPessoa" >
         </div>
         <div class="col-md-3" id="div-cnpjPessoa" style="display: none">
             <label for="cnpjPessoa" class="form-label fs-5 fs-5">CNPJ</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa" required>
+            <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa" >
         </div>
         <div class="col-md-7">
             <label for="name" class="form-label fs-5 fs-5">Nome</label>
@@ -104,7 +104,7 @@
         </div>
     </form>
     {{-- <script>
-        
+
 function controleTipo() {
     var tipoPessoa = document.getElementById("tipoPessoa").value;
     // document.getElementById("demo").innerHTML = "You selected: " + tipoPessoa;
@@ -118,7 +118,7 @@ function controleTipo() {
     }
 };
     </script> --}}
-{{-- 
+{{--
     <script>
         function controlTipo(element) {
             let sec = getElementById('cnpj/cpf')
