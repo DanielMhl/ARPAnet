@@ -31,7 +31,6 @@
                     <li><a href="{{route('pessoas.index')}}" class="dropdown-item">Pessoas</a></li>
                     <li><a href="{{ route('associados.index') }}" class="dropdown-item">Associados</a></li>
                     <li><a href="{{ route('contratados.index') }}" class="dropdown-item">Contratados</a></li>
-                    <li><a href="{{ route('associados.index') }}" class="dropdown-item">Compradores</a></li>
                 </ul>
               </li>
               <li class="nav-item px-3">
