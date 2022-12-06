@@ -81,14 +81,14 @@
               </div>
               <div class="mx-auto flex-fill">
                 <h6 class="fw-bold mb-2">Sobre nós</h6>
-                <span class="d-block"><a href="https://www.blogger.com/profile/14072350492570167936" class="text-reset text-decoration-none">Informações</a></span>
-                <span class="d-block"><a href="http://arpareciclagem.blogspot.com" class="text-reset text-decoration-none">Blog</a></span>
+                <span class="d-block"><a href="https://www.blogger.com/profile/14072350492570167936"  target="_blank" class="text-reset text-decoration-none">Informações</a></span>
+                <span class="d-block"><a href="http://arpareciclagem.blogspot.com"  target="_blank" class="text-reset text-decoration-none">Blog</a></span>
               </div>
               <div class="mx-auto flex-fill">
                 <h6 class="fw-bold mb-2">Redes</h6>
                   <div>
-                    <a href="https://pt-br.facebook.com/reciclagemarpa/" class="me-3 text-reset" title="Facebook"><i class="bi bi-facebook template-txt"></i></a>
-                    <a href="https://www.instagram.com/arpa7395/" class="me-3 text-reset" title="Instagram"><i class="bi bi-instagram template-txt"></i></a>
+                    <a href="https://pt-br.facebook.com/reciclagemarpa/" target="_blank" class="me-3 text-reset" title="Facebook"><i class="bi bi-facebook template-txt"></i></a>
+                    <a href="https://www.instagram.com/arpa7395/"  target="_blank" class="me-3 text-reset" title="Instagram"><i class="bi bi-instagram template-txt"></i></a>
                   </div>
               </div>
             </div>
