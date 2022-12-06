@@ -11,11 +11,7 @@ class Contratado extends Model
     use HasFactory;
 
    protected $fillable = [
-        'idContratdo', 'dtContratacaoContratado', 'dtDesligamentoContratado', 'idPessoa'
+        'descricaoServico', 'dtContratacaoContratado', 'dtDesligamentoContratado', 'idPessoa'
     ];
 
-    public function pessoa()
-    {
-        return $this->belongsTo(Pessoa::class, 'idPessoa');
-    }
 }

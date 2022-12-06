@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Associado extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'dtAssociacaoAssociado', 'dtDesligamentAssociado', 'idPessoa'
+    ];
 }

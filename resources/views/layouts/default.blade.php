@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-</head>
+    </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark mb-4 template-bg">
@@ -28,8 +28,8 @@
                 <ul class="dropdown-menu">
                     <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
                     <option value="asssociado">-----------------------</option>
-                    <li><a href="#" class="dropdown-item">Associados</a></li>
-                    <li><a href="#" class="dropdown-item">Contratados</a></li>
+                    <li><a href="{{route('associados.index')}}" class="dropdown-item">Associados</a></li>
+                    <li><a href="{{route('contratados.index')}}" class="dropdown-item">Contratados</a></li>
                     <li><a href="#" class="dropdown-item">Compradores</a></li>
                     {{-- @foreach ($departamentos as $departamento)
                     <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>

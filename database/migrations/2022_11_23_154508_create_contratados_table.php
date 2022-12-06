@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('idContratado');
             $table->date('dtContratacaoContratado');
             $table->date('dtDesligamentoContratado');
+            $table->varchar('descricaoServico');
             $table->unsignedBigInteger('idPessoa');
             $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')
             ->onUpdate('restrict')->onDelete('restrict');
