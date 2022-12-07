@@ -36,7 +36,8 @@ class UsuarioController extends Controller
         $input = $request->toArray();
         if(!empty($input['foto'] && $input['foto']->isValid())) {
             $nomeArquivo = $input['foto']->hashName(); // obtém a hash do nome do arquivo
-            $input['foto']->store('public/usuarios'); // upload da foto em uma pasta
+            $input['foto']->store('usuarios'); // upload da foto em uma pasta
+            // Storage::move('usuarios/'.$nomeArquivo, 'storage/usuarios/'.$nomeArquivo);
             $input['foto'] = $nomeArquivo; // guardar o nome do arquivo
         } else {
             $input['foto'] = null;
@@ -56,7 +57,7 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         $usuario = User::find($id);
-        Storage::delete('public/usuarios/'.$usuario['foto']);
+        Storage::delete('usuarios/'.$usuario['foto']);
         $usuario->delete();
 
         return redirect()->route('usuarios.index')->with('sucesso', 'Usuário deletado com sucesso!');
@@ -78,9 +79,9 @@ class UsuarioController extends Controller
 
         if(!empty($input['foto']) && $input['foto']->isValid())
         {
-            Storage::delete('public/usuarios/'.$usuario['foto']);
+            Storage::delete('usuarios/'.$usuario['foto']);
             $nomeArquivo = $input['foto']->hashName(); // obtém a hash do nome do arquivo
-            $input['foto']->store('public/usuarios'); // upload da foto em uma pasta
+            $input['foto']->store('usuarios'); // upload da foto em uma pasta
             $input['foto'] = $nomeArquivo; // guardar o nome do arquivo
         }
         if($input['password'] != null){
@@ -117,9 +118,9 @@ class UsuarioController extends Controller
         $usuario = User::find($id);
         if(!empty($input['foto']) && $input['foto']->isValid())
         {
-            Storage::delete('public/usuarios/'.$usuario['foto']);
+            Storage::delete('usuarios/'.$usuario['foto']);
             $nomeArquivo = $input['foto']->hashName(); // obtém a hash do nome do arquivo
-            $input['foto']->store('public/usuarios'); // upload da foto em uma pasta
+            $input['foto']->store('usuarios'); // upload da foto em uma pasta
             $input['foto'] = $nomeArquivo; // guardar o nome do arquivo
         }
         // if ( !empty($input['password']) && isset($input['password'])) // verifica se a senha foi alterada

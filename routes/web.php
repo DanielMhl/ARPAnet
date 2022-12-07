@@ -8,6 +8,7 @@ use App\Http\Controllers\ContratadoController;
 use App\Http\Controllers\AssociadoController;
 use App\Http\Controllers\VendaController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -87,4 +88,3 @@ Route::put('/usuarios/updatepass/{id}', [UsuarioController::class, 'updatepass']
 // Route::put('/usuarios/modifypass/{id}', [UsuarioController::class, 'modifypass'])->name('usuarios.modifypass'); //trocar senha
 // function ($id) {return 'User '.$id;} , -> TESTE VARIÁVEL
 // array_merge(\Illuminate\Support\Facades\Route::current()->parameters(), ['locale' => 'en'])
-
