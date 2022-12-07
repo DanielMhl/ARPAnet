@@ -30,7 +30,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Vendas (Mensal)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ {{ $totalMes->totalMes }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -47,7 +47,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Vendas (Anual)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ {{ $totalAno->totalAno }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -60,65 +60,28 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Pessoas Cadastradas</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Últimas Vendas Realizadas</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Cargo</th>
-                        <th>Endereço</th>
-                        <th>Idade</th>
-                        <th>Data de Adimissão</th>
-                        <th>Salário</th>
+                        <th>Nome do Comprador</th>
+                        <th>Data da Venda</th>
+                        <th>Valor</th>
+                        <th>Qtd. Produtos</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Cargo</th>
-                        <th>Endereço</th>
-                        <th>Idade</th>
-                        <th>Data de Adimissão</th>
-                        <th>Salário</th>
-                    </tr>
-                </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                    </tr>
-                    <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
-                    </tr>
-                    <tr>
+                    @foreach ($vendasDashboard as $vendaDashboard)
+                        <tr>
+                            <td>{{ $vendaDashboard->nomePessoa }}</td>
+                            <td>{{ $vendaDashboard->created_at }}</td>
+                            <td>{{ $vendaDashboard->valorVenda }}</td>
+                            <td>{{ $vendaDashboard->qtd_produtos }}</td>
+                        </tr> 
+                    @endforeach
                 </tbody>
             </table>
         </div>

@@ -26,6 +26,7 @@
                 <th width="60">ID</th>
                 <th>Forma de Pagamento</th>
                 <th>Comprador</th>
+                <th>Data da Venda</th>
                 <th>Valor</th>
                 <th width="160">Ação</th>
             </tr>
@@ -36,14 +37,14 @@
                 <td class="align-middle text-center">{{ $venda->idVenda }}</td>
                 <td class="align-middle text-center">{{ $venda->descFormaPagamento }}</td>
                 <td class="align-middle text-center">{{ $venda->nomePessoa }}</td>
+                <td class="align-middle text-center">{{ $venda->created_at }}</td>
                 <td class="align-middle text-center">{{ $venda->valorVenda }}</td>
                 <td class="align-middle text-center">
-                    <a href="#" class="btn btn-primary" title="Editar"><i class="bi bi-search"></i></a>                </td>
+                    <a href="{{ $venda->idVenda }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="{{ $venda->idVenda }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-
-    {{-- {{ $cargos->links('paginacao') }} --}}
 @endsection
-
