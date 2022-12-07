@@ -16,24 +16,17 @@ class ContratadoController extends Controller
 
     public function index(Request $request)
     {
+        $pessoas = Pessoa::all();
         $contratados = Contratado::where('idContratado', 'like', '%'.$request->buscaContratado.'%')->orderBy('idContratado','asc')->get();
         $totalContratados = Contratado::all()->count();
         return view('contratados.index', compact('contratados', 'totalContratados'));
     }
 
-    public function pessoa($idPessoa, Request $request)
-    {
-        $pessoas = Pessoa::find($idPessoa);
-
-        $contratados = Contratado::where('idPessoa',$idPessoa)->where('nomePessoa','like','%'.
-        $request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get(10);
-
-        $totalcontratados = Pessoa::where('idPessoa', $idPessoa)->count();
-        return view('funcionarios.index', compact('pessoas', 'totalFuncionarios','departamento'));
-    }
     public function create()
     {
-        return view('contratados.create');
+        $pessoas = Pessoa::all();
+        $contratados = Contratado::all();
+        return view('contratados.create', compact('contratados', 'pessoas'));
     }
 
     public function store(Request $request)

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('associados', function (Blueprint $table) {
             $table->id('idAssociado');
             $table->date('dtAssociacaoAssociado');
-            $table->date('dtDesligamentoAssociado');
+            $table->date('dtDesligamentoAssociado')->nullable(true);
             $table->unsignedBigInteger('idPessoa');
             $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')
             ->onUpdate('restrict')->onDelete('restrict');

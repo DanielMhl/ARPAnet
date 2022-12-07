@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-4">
             <label for="quantidadeProduto" class="form-label fs-5 fs-5">Quantidade (Kg)</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="quantidadeProduto" placeholder="Kg" name="quantidadeProduto" required>
+            <input type="number" class="form-control form-control-lg bg-light" id="quantidadeProduto" placeholder="Kg" name="quantidadeProduto" required>
         </div>
         <div class="mt-5">
             <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>

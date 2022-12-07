@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('contratados', function (Blueprint $table) {
             $table->id('idContratado');
             $table->date('dtContratacaoContratado');
-            $table->date('dtDesligamentoContratado');
+            $table->date('dtDesligamentoContratado')->nullable(true);
             $table->text('descricaoServico');
             $table->unsignedBigInteger('idPessoa');
             $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')

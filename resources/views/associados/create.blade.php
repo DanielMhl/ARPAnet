@@ -7,10 +7,11 @@
 
     <form class="row g-4" method="POST" action="{{ route('associados.store') }}">
         @csrf
-        <div class="col-md-4">
-            <label for="idPessoa" class="form-label fs-5">Pessoa</label>
-            <input type="text" class="form-control form-control-lg bg-light" id="idPessoa" name="idPessoa" required>
-        </div>
+        <select class="form-select form-select-lg bg-white" id="idPessoa" name="idPessoa" required>
+            @foreach ($pessoas as $pessoa)
+                <option value="{{ $pessoa->idPessoa }}">{{ $pessoa->nomePessoa}}</option>
+            @endforeach
+        </select>
         <div class="col-md-4">
             <label for="dtAssociacaoAssociado" class="form-label fs-5">Data de Associação</label>
             <input type="date" class="form-control form-control-lg bg-light" id="dtAssociacaoAssociado" name="dtAssociacaoAssociado" required>

@@ -10,6 +10,6 @@ class Associado extends Model
     use HasFactory;
 
     protected $fillable = [
-        'dtAssociacaoAssociado', 'dtDesligamentAssociado', 'idPessoa'
+        'dtAssociacaoAssociado', 'dtDesligamentoAssociado', 'idPessoa'
     ];
 }

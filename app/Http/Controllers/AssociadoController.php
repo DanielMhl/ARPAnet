@@ -19,11 +19,14 @@ class AssociadoController extends Controller
         $associados = Associado::where('idAssociado', 'like', '%'.$request->buscaAssociado.'%')->orderBy('idAssociado','asc')->get();
         $totalAssociados= Associado::all()->count();
         return view('associados.index', compact('associados', 'totalAssociados'));
+
     }
 
     public function create()
     {
-        return view('associados.create');
+        $pessoas = Pessoa::all();
+        $associados = Associado::all();
+        return view('associados.create', compact('associados', 'pessoas'));
     }
 
     public function store(Request $request)
