@@ -37,7 +37,9 @@
                 <td class="align-middle text-center">{{ $associado->telefonePessoa}}</td>
                 <td class="align-middle text-center">
                     <a href="{{ route('associados.edit', $associado->idAssociado) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $associado->idAssociado }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $associado->idAssociado }}"><i class="bi bi-trash"></i></a>
+                    
+                    @include('associados.delete')
                 </td>
             </tr>
             @endforeach
