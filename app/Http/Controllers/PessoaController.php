@@ -52,9 +52,10 @@ class PessoaController extends Controller
         $input = str_replace("/","", $input);
 
         $idPessoa = Pessoa::create($input);
+        // dd($idPessoa);
         $input['idPessoa'] = $idPessoa;
-        $input['idPessoa'] = $idPessoa->id;
-        //dd($input);
+        $input['idPessoa'] = $idPessoa->idPessoa;
+        // dd($input);
         Endereco::create($input);
         /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
             // $idUsuario=User::create($input);
