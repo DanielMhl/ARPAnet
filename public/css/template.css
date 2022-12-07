@@ -6,6 +6,10 @@
     /* endVARIÁVEIS */
 }
 
+form input {
+  text-transform: uppercase;
+}
+
 .pagination {
   justify-content: center;
 }

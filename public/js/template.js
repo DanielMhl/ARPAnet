@@ -8,12 +8,36 @@ function controleTipo() {
         document.getElementById('div-cnpjPessoa').style.display = "block";
         document.getElementById("div-cnpjPessoa").required = true;
 
+        //APAGAR CONTEÚDO DOS CAMPOS
+        document.getElementById('cpfPessoa').value=("");
+        document.getElementById('nomePessoa').value=("");
+        document.getElementById('telefonePessoa').value=("");
+        document.getElementById('cepEndereco').value=("");
+        document.getElementById('logradouroEndereco').value=("");
+        document.getElementById('numeroEndereco').value=("");
+        document.getElementById('complementoEndereco').value=("");
+        document.getElementById('bairroEndereco').value=("");
+        document.getElementById('cidadeEndereco').value=("");
+        document.getElementById('ufEndereco').value=("");
+
     }
     else {
         document.getElementById("div-cpfPessoa").style.display = "block";
         document.getElementById('div-cnpjPessoa').style.display = "none";
         document.getElementById("div-cpfPessoa").required = false;
         document.getElementById("div-cpfPessoa").required = true;
+
+        //APAGAR CONTEÚDO DOS CAMPOS
+        document.getElementById('cnpjPessoa').value=("");
+        document.getElementById('nomePessoa').value=("");
+        document.getElementById('telefonePessoa').value=("");
+        document.getElementById('cepEndereco').value=("");
+        document.getElementById('logradouroEndereco').value=("");
+        document.getElementById('numeroEndereco').value=("");
+        document.getElementById('complementoEndereco').value=("");
+        document.getElementById('bairroEndereco').value=("");
+        document.getElementById('cidadeEndereco').value=("");
+        document.getElementById('ufEndereco').value=("");
     }
 };
 
@@ -88,6 +112,9 @@ function pesquisaCep(valor) {
 };
 
 /* endWEBSERVICE ENDEREÇO */
+
+
+
 /* WEBSERVICE CNPJ */
 function limpaFormularioCNPJ() {
     //Limpa valores do formulário de CNPJ.
@@ -102,7 +129,7 @@ function limpaFormularioCNPJ() {
     document.getElementById('ufEndereco').value=("");
 }
 
-function meu_callback(conteudo) {
+function meu_callback2(conteudo) {
     if (!("erro" in conteudo)) {
         //Atualiza os campos com os valores.
         document.getElementById('nomePessoa').value=(conteudo.nome);
@@ -190,7 +217,7 @@ function pesquisaCNPJ(cnpj) {
             document.getElementById('cepEndereco').value="...";
             document.getElementById('numeroEndereco').value="...";
             document.getElementById('logradouroEndereco').value="...";
-            document.getElementById('complementoEndereco').value="...";
+            // document.getElementById('complementoEndereco').value="...";
             document.getElementById('bairroEndereco').value="...";
             document.getElementById('cidadeEndereco').value="...";
             document.getElementById('ufEndereco').value="...";
@@ -199,7 +226,7 @@ function pesquisaCNPJ(cnpj) {
             var script = document.createElement('script');
 
             //Sincroniza com o callback.
-            script.src = 'https://www.receitaws.com.br/v1/cnpj/'+ cnpj + '?callback=meu_callback';
+            script.src = 'https://www.receitaws.com.br/v1/cnpj/'+ cnpj + '?callback=meu_callback2';
 
             //Insere script no documento e carrega o conteúdo.
             document.body.appendChild(script);
