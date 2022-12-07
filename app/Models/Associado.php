@@ -9,6 +9,8 @@ class Associado extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idAssociado';
+
     protected $fillable = [
         'dtAssociacaoAssociado', 'dtDesligamentoAssociado', 'idPessoa'
     ];

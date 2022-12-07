@@ -55,6 +55,9 @@ Route::post('/contratados', [ContratadoController::class, 'store'])->name('contr
 //ROTA DE ASSOCIADOS
 Route::get('/associados', [AssociadoController::class, 'index'])->name('associados.index');
 Route::get('/associados/create', [AssociadoController::class, 'create'])->name('associados.create');
+Route::delete('/associados/{idAssociado}', [AssociadoController::class, 'destroy'])->name('associados.destroy'); //deletar registro
+Route::get('/associados/edit/{idAssociado}', [AssociadoController::class, 'edit'])->name('associados.edit'); //formulário de edição
+Route::put('/associados/{idAssociado}', [AssociadoController::class, 'update'])->name('associados.update'); //atualizar registro
 Route::post('/associados', [AssociadoController::class, 'store'])->name('associados.store');
 
 //ROTAS USUARIOS

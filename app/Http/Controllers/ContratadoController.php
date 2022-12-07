@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contratado;
 use App\Models\Pessoa;
-
+use Illuminate\Support\Facades\DB;
 class ContratadoController extends Controller
 {
     public function __construct()
@@ -17,7 +17,11 @@ class ContratadoController extends Controller
     public function index(Request $request)
     {
         $pessoas = Pessoa::all();
-        $contratados = Contratado::where('idContratado', 'like', '%'.$request->buscaContratado.'%')->orderBy('idContratado','asc')->get();
+        
+        $contratados = DB::table('contratados')
+        ->join('pessoas', 'pessoas.idPessoa', '=', 'contratados.idPessoa')
+        ->where('idContratado', 'like', '%'.$request->buscaContratado.'%')->orderBy('idContratado','asc')->get();
+       
         $totalContratados = Contratado::all()->count();
         return view('contratados.index', compact('contratados', 'totalContratados'));
     }

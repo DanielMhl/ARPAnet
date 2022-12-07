@@ -1,17 +1,12 @@
 @extends('layouts.default')
 
-@section('title', 'Cadastrar Associado')
+@section('title', 'Editar Associado')
 
 @section('conteudo')
-    <h1 class="mb-5">Cadastrar Associado</h1>
+    <h1 class="mb-5">Editar Associado</h1>
 
-    <form class="row g-4" method="POST" action="{{ route('associados.store') }}">
+    <form class="row g-4" method="POST" action="{{ route('associados.update', $associados->idAssociado) }}">
         @csrf
-        <select class="form-select form-select-lg bg-white" id="idPessoa" name="idPessoa" required>
-            @foreach ($pessoas as $pessoa)
-                <option value="{{ $pessoa->idPessoa }}">{{ $pessoa->nomePessoa}}</option>
-            @endforeach
-        </select>
         <div class="col-md-4">
             <label for="dtAssociacaoAssociado" class="form-label fs-5">Data de Associação</label>
             <input type="date" class="form-control form-control-lg bg-light" id="dtAssociacaoAssociado" name="dtAssociacaoAssociado" required>

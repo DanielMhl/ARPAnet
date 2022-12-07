@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Associado;
 use App\Models\Pessoa;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AssociadoController extends Controller
 {
     public function __construct()
@@ -16,10 +16,12 @@ class AssociadoController extends Controller
 
     public function index(Request $request)
     {
-        $associados = Associado::where('idAssociado', 'like', '%'.$request->buscaAssociado.'%')->orderBy('idAssociado','asc')->get();
+        $associados = DB::table('associados')
+        ->join('pessoas', 'pessoas.idPessoa', '=', 'associados.idPessoa')
+        ->where('idAssociado', 'like', '%'.$request->buscaAssociado.'%')->orderBy('idAssociado','asc')->get();
+
         $totalAssociados= Associado::all()->count();
         return view('associados.index', compact('associados', 'totalAssociados'));
-
     }
 
     public function create()
@@ -34,6 +36,32 @@ class AssociadoController extends Controller
         $input = $request->toArray();
         Associado::create($input);
 
-        return redirect()->route('associados.index')->with('Sucesso', 'Associados cadastrado com sucesso!');
+        return redirect()->route('associados.index')->with('Sucesso', 'Associado cadastrado com sucesso!');
+    }
+
+    public function destroy($idAssociado)
+    {
+        $associados = Associado::find($idAssociado);
+        $associados->delete();
+
+        return redirect()->route('associados.index')->with('Sucesso', 'Associado deletado com sucesso!');
+    }
+
+    public function edit($idAssociado)
+    {
+        $associados = Associado::find($idAssociado);
+        return view('associados.edit', compact('associados'));
+    }
+
+    public function update(Request $request, $idAssociado)
+    {
+        $input = $request->toArray();
+        $associados = Associado::find($idAssociado);
+
+        $associados->fill($input);
+        $associados->save();
+
+        return redirect()->route('associados.index')->with('Sucesso', 'Associado alterado com sucesso!');
+
     }
 }

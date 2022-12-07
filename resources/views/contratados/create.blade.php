@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-4">
             <label for="dtDesligamentoContratado" class="form-label fs-5">Data de Desligamento</label>
-            <input type="date" class="form-control form-control-lg bg-light" id="dtDesligamentoContratado" name="dtDesligamentoContratado" required>
+            <input type="date" class="form-control form-control-lg bg-light" id="dtDesligamentoContratado" name="dtDesligamentoContratado">
         </div>
         <div class="form-group">
             <p><label for="descricaoServico" class="form-label fs-5 ">Descrição do Serviço</label></p>
