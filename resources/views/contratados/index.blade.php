@@ -36,11 +36,14 @@
                 <td class="align-middle text-center">{{ $contratado->nomePessoa}}</td>
                 <td class="align-middle text-center">{{ $contratado->telefonePessoa}}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $contratado->idContratado }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $contratado->idContratado }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ route('contratados.edit', $contratado->idContratado) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $contratado->idContratado }}"><i class="bi bi-trash"></i></a>
+                    
+                    @include('contratados.delete')
                 </td>
             </tr>
             @endforeach
+
         </tbody>
     </table>
 

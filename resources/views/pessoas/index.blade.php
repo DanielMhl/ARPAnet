@@ -42,8 +42,10 @@
                 <td class="align-middle text-center">@if ($pessoa->tipoPessoa == "F") {{ $pessoa->cpfPessoa }} @elseif ($pessoa->tipoPessoa == "J") {{ $pessoa->cnpjPessoa  }} @endif</td>
                 <td class="align-middle text-center">{{ $pessoa->logradouroEndereco }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $pessoa->idPessoa }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $pessoa->idPessoa }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ route('pessoas.edit', $pessoa->idPessoa) }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
+                    <a href="" class="btn btn-danger" title="Excluir" data-bs-toggle="modal" data-bs-target="#modal-deletar-{{ $pessoa->idPessoa }}"><i class="bi bi-trash"></i></a>
+                    
+                    @include('pessoas.delete')
                 </td>
             </tr>
             @endforeach

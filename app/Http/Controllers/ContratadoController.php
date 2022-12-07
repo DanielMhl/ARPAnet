@@ -40,4 +40,30 @@ class ContratadoController extends Controller
 
         return redirect()->route('contratados.index')->with('Sucesso', 'Contratado cadastrado com sucesso!');
     }
+
+    public function destroy($idContratado)
+    {
+        $contratados = Contratado::find($idContratado);
+        $contratados->delete();
+
+        return redirect()->route('contratados.index')->with('Sucesso', 'Contratado deletado com sucesso!');
+    }
+
+    public function edit($idContratado)
+    {
+        $contratados = Contratado::find($idContratado);
+        return view('contratados.edit', compact('contratados'));
+    }
+
+    public function update(Request $request, $idContratado)
+    {
+        $input = $request->toArray();
+        $contratados = Contratado::find($idContratado);
+
+        $contratados->fill($input);
+        $contratados->save();
+
+        return redirect()->route('contratados.index')->with('Sucesso', 'Contratado alterado com sucesso!');
+
+    }
 }

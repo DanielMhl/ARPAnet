@@ -7,6 +7,7 @@
 
     <form class="row g-4" method="POST" action="{{ route('associados.update', $associados->idAssociado) }}">
         @csrf
+        @method('PUT')
         <div class="col-md-4">
             <label for="dtAssociacaoAssociado" class="form-label fs-5">Data de Associação</label>
             <input type="date" class="form-control form-control-lg bg-light" id="dtAssociacaoAssociado" name="dtAssociacaoAssociado" required>

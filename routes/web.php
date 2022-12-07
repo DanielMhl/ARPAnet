@@ -47,11 +47,17 @@ Route::put('/produtos/{idProduto}', [ProdutoController::class, 'update'])->name(
 Route::get('/pessoas', [PessoaController::class, 'index'])->name('pessoas.index');
 Route::get('/pessoas/create', [PessoaController::class, 'create'])->name('pessoas.create');
 Route::post('/pessoas', [PessoaController::class, 'store'])->name('pessoas.store');
+Route::delete('/pessoas/{idPessoa}', [PessoaController::class, 'destroy'])->name('pessoas.destroy'); //deletar registro
+Route::get('/pessoas/edit/{idPessoa}', [PessoaController::class, 'edit'])->name('pessoas.edit'); //formulário de edição
+Route::put('/pessoas/{idPessoa}', [PessoaController::class, 'update'])->name('pessoas.update'); //atualizar registro
 
 //ROTA DE CONTRATADOS
 Route::get('/contratados', [ContratadoController::class, 'index'])->name('contratados.index');
 Route::get('/contratados/create', [ContratadoController::class, 'create'])->name('contratados.create');
 Route::post('/contratados', [ContratadoController::class, 'store'])->name('contratados.store');
+Route::delete('/contratados/{idContratado}', [ContratadoController::class, 'destroy'])->name('contratados.destroy'); //deletar registro
+Route::get('/contratados/edit/{idContratado}', [ContratadoController::class, 'edit'])->name('contratados.edit'); //formulário de edição
+Route::put('/contratados/{idContratado}', [ContratadoController::class, 'update'])->name('contratados.update'); //atualizar registro
 
 //ROTA DE ASSOCIADOS
 Route::get('/associados', [AssociadoController::class, 'index'])->name('associados.index');

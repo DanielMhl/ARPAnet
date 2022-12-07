@@ -10,6 +10,8 @@ class Contratado extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idContratado';
+
    protected $fillable = [
         'descricaoServico', 'dtContratacaoContratado', 'dtDesligamentoContratado', 'idPessoa'
     ];

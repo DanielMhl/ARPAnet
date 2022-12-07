@@ -48,4 +48,3 @@
 
     {{-- {{ $cargos->links('paginacao') }} --}}
 @endsection
-

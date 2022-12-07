@@ -62,4 +62,30 @@ class PessoaController extends Controller
         /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
         return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa cadastrada com sucesso!');
     }
+
+    public function destroy($idPessoa)
+    {
+        $pessoas = Pessoa::find($idPessoa);
+        $pessoas->delete();
+
+        return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa deletada com sucesso!');
+    }
+
+    public function edit($idPessoa)
+    {
+        $pessoas = Pessoa::find($idPessoa);
+        return view('pessoas.edit', compact('pessoas'));
+    }
+
+    public function update(Request $request, $idPessoa)
+    {
+        $input = $request->toArray();
+        $pessoas = Pessoa::find($idPessoa);
+
+        $pessoas->fill($input);
+        $pessoas->save();
+
+        return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa alterada com sucesso!');
+
+    }
 }
