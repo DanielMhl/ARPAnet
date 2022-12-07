@@ -5,6 +5,7 @@
 @section('conteudo')
     <h1 class="mb-5">Cadastrar Pessoa</h1>
     <h2>Pessoa</h2><br/>
+    <div class="alert alert-danger text-center p-2" style="display: none" id="div-alert-2"></div>
     <form class="row g-4" method="POST" action="{{ route('pessoas.store') }}">
         @csrf
         <div class="col-md-2">
@@ -24,14 +25,14 @@
         <div class="col-md-3" id="div-cnpjPessoa" style="display: none">
             <label for="cnpjPessoa" class="form-label fs-5 fs-5">CNPJ</label>
             <input type="text" class="form-control form-control-lg bg-light" id="cnpjPessoa" name="cnpjPessoa"
-                maxlength="18" minlength="14">
+                maxlength="18" minlength="14" onblur="pesquisaCNPJ(this.value);">
         </div>
         <div class="col-md-7">
-            <label for="name" class="form-label fs-5 fs-5">Nome</label>
+            <label for="nomePessoa" class="form-label fs-5 fs-5">Nome</label>
             <input type="text" class="form-control form-control-lg bg-light" id="nomePessoa" name="nomePessoa" required>
         </div>
         <div class="col-md-4">
-            <label for="telefone" class="form-label fs-5 fs-5">Telefone</label>
+            <label for="telefonePessoa" class="form-label fs-5 fs-5">Telefone</label>
             <input type="tel" placeholder="(99) 9999-9999"
                 title="Número de telefone precisa ser no formato (99) 9999-9999"
                 class="form-control form-control-lg bg-light" id="telefonePessoa" name="telefonePessoa" required>
