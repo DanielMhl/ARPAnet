@@ -11,7 +11,7 @@
             <label for="idComprador" class= "form-label fs-5 fs-5">Comprador</label>
             <select class="form-select form-select-lg bg-white" id="idComprador" name="idPessoaComprador" required>
                 @foreach ($compradores as $comprador)
-                    <option value="{{ $comprador->idPessoa }}">{{ $comprador->nomePessoa.' - '.$comprador->cnpjPessoa }}</option>
+                    <option value="{{ $comprador->idPessoa }}">{{ $comprador->nomePessoa }}</option>
                 @endforeach
             </select>
         </div>
@@ -43,7 +43,7 @@
                         <input name="produto[]" id="check{{ $produto->idProduto }}" type="checkbox" class="form-check-input" value="{{ $produto->idProduto }}" onchange="controlInput(this)">
                     </td>
                     <td class="align-middle text-center">{{ $produto->descricaoProduto }}</td>
-                    <td class="align-middle text-center"><input disabled name="quantidade[]" id="inputcheck{{ $produto->idProduto }}" type="number" class="form-control form-control-md bg-light disabled"></td>
+                    <td class="align-middle text-center"><input disabled name="quantidade[]" id="inputcheck{{ $produto->idProduto }}" type="text" class="form-control form-control-md bg-light disabled"></td>
                     <td class="align-middle text-center">{{ $produto->quantidadeProduto }}</td>
                 </tr>
                 @endforeach

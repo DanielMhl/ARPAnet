@@ -40,8 +40,7 @@
                 <td class="align-middle text-center">{{ $venda->created_at }}</td>
                 <td class="align-middle text-center">{{ $venda->valorVenda }}</td>
                 <td class="align-middle text-center">
-                    <a href="{{ $venda->idVenda }}" class="btn btn-primary" title="Editar"><i class="bi bi-pen"></i></a>
-                    <a href="{{ $venda->idVenda }}" class="btn btn-danger" title="Excluir"><i class="bi bi-trash"></i></a>
+                    <a href="{{ $venda->idVenda }}" class="btn btn-primary" title="Editar"><i class="bi bi-search"></i></a>
                 </td>
             </tr>
             @endforeach

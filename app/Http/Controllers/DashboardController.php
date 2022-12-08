@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Venda;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Stmt\Echo_;
 
 class DashboardController extends Controller
 {
@@ -19,16 +17,9 @@ class DashboardController extends Controller
         ->limit(10)
         ->get();
 
-        $totalMes = DB::table('vendas')
-        ->where(DB::raw('month(created_at)'), '=', DB::raw('month(current_timestamp())'))
-        ->where(DB::raw('year(created_at)'), '=', DB::raw('year(current_timestamp())'))
-        ->select(DB::raw('valorVenda'),DB::raw('(sum(valorVenda)) as ttl1'))
-        ->first();
-
-        $totalAno = DB::table('vendas')
-        ->where(DB::raw('year(created_at)'), '=', DB::raw('year(current_timestamp())'))
-        ->select(DB::raw('valorVenda'), DB::raw('(sum(valorVenda)) as ttl2'))
-        ->first();
+        $totalMes = Venda::select(DB::raw('(sum(valorVenda)) as totalMes'))->where(DB::raw('month(created_at)'), '=', DB::raw('month(current_timestamp())'), 'and', DB::raw('year(created_at)'), '=', DB::raw('year(current_timestamp())'))->first();
+        
+        $totalAno = Venda::select(DB::raw('(sum(valorVenda)) as totalAno'))->where(DB::raw('year(created_at)'), '=', DB::raw('year(current_timestamp())'))->first();
 
         return view('dashboard.index', compact('totalMes', 'totalAno', 'vendasDashboard'));
     }
