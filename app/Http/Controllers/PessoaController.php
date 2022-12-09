@@ -65,7 +65,12 @@ class PessoaController extends Controller
     }
 
     public function destroy($idPessoa)
-    {
+    {   
+        
+        $idEndereco = DB::table('enderecos')->select('idEndereco')->where('idPessoa', '=', $idPessoa)->first();
+        $endereco = Endereco::find($idEndereco->idEndereco);
+        $endereco->delete();
+
         $pessoas = Pessoa::find($idPessoa);
         $pessoas->delete();
 

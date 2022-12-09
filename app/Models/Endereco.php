@@ -9,6 +9,8 @@ class Endereco extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idEndereco';
+
     protected $fillable = [
         'ufEndereco',
         'logradouroEndereco',
