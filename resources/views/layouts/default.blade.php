@@ -26,8 +26,8 @@
               <li class="nav-item px-3 dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" ><i id="main" class="bi bi-person"></i>Pessoas</a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
-                    <option value="asssociado">-----------------------</option>
+                    {{-- <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
+                    <option value="asssociado">-----------------------</option> --}}
                     <li><a href="{{route('pessoas.index')}}" class="dropdown-item">Pessoas</a></li>
                     <li><a href="{{ route('associados.index') }}" class="dropdown-item">Associados</a></li>
                     <li><a href="{{ route('contratados.index') }}" class="dropdown-item">Contratados</a></li>

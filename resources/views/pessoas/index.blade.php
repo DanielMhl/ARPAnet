@@ -4,13 +4,19 @@
 
 @section('conteudo')
 
-
-    @if (Session::get('sucesso'))
-        <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
+    @if (Session::get('Sucesso'))
+    <div class="alert alert-success text-center">{{ Session::get('Sucesso') }}</div>
     @endif
+
+    @if (Session::get('Erro'))
+    <div class="alert alert-danger text-center">{{ Session::get('Erro') }}</div>
+    @endif
+
     <h1 class="mb-4">Pessoas</h1>
+
     <a href="{{ route('pessoas.create') }}" class="btn btn-primary position-absolute top-0 end-0 m-4
     rounded-circle fs-4"><i class="bi bi-person-plus-fill"></i></a>
+
     <p>Total de Pessoas: {{ $totalPessoas }}</p>
 
 <form action="" method="get" class="mb-3 d-flex justify-content-end">

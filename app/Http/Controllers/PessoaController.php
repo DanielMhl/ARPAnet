@@ -66,7 +66,14 @@ class PessoaController extends Controller
 
     public function destroy($idPessoa)
     {   
-        
+        $idAssociado = DB::table('associados')->select('idAssociado')->where('idPessoa', '=', $idPessoa)->first();
+        $idContratado = DB::table('contratados')->select('idContratado')->where('idPessoa', '=', $idPessoa)->first();
+
+        if (!empty($idAssociado) || !empty($idContratado)) {
+            return redirect()->route('pessoas.index')->
+            with('Erro', 'Antes de excluir a pessoa, é necessário excluir o seu cadastro de '.(!empty($idAssociado)?'associado':'contratado').'.');
+        }
+
         $idEndereco = DB::table('enderecos')->select('idEndereco')->where('idPessoa', '=', $idPessoa)->first();
         $endereco = Endereco::find($idEndereco->idEndereco);
         $endereco->delete();
