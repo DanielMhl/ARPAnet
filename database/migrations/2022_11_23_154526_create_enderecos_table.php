@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('logradouroEndereco');
             $table->string('numeroEndereco', 20);
             $table->char('cepEndereco', 8);
-            $table->string('complementoEndereco');
+            $table->string('complementoEndereco')->nullable(true);
             $table->unsignedBigInteger('idPessoa');
             $table->foreign('idPessoa')->references('idPessoa')->on('pessoas')
             ->onUpdate('restrict')->onDelete('restrict');

@@ -24,7 +24,7 @@
                 <a class="nav-link text-white" href="{{route('dashboard.index')}}"><i id="main" class="bi bi-house-door color-white"></i>Home</a>
               </li>
               <li class="nav-item px-3 dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" ><i id="main" class="bi bi-person"></i>Pessoas</a>
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" ><i id="main" class="bi bi-person"></i>Cadastros</a>
                 <ul class="dropdown-menu">
                     {{-- <li><a href="{{route('pessoas.create')}}" class="dropdown-item">Cadastrar Novo</a></li>
                     <option value="asssociado">-----------------------</option> --}}

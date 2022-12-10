@@ -17,50 +17,37 @@ class PessoaController extends Controller
 
     public function index(Request $request)
     {
-        // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->get();
         // $pessoas = Pessoa::where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(10);
-         $pessoas = DB::table('pessoas')
-         ->join('enderecos', 'enderecos.idPessoa', '=', 'pessoas.idPessoa', 'inner')
-         ->where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(30);
-        //  dd($pessoas);
-        // $endereco = Pessoa::with('endereco')->findOrFail(20);
-        // dd($endereco);
-        // ->with('endereco')
-        // $idPessoa = $pessoas->toArray();
-        // dd($idPessoa);
-        // $idPessoas = $idPessoa['idPessoa'];
-        // $endereco = Endereco::where('idPessoa', $idPessoas);
+        $pessoas = DB::table('pessoas')
+        ->join('enderecos', 'enderecos.idPessoa', '=', 'pessoas.idPessoa', 'inner')
+        ->where('nomePessoa', 'like', '%'.$request->buscaPessoa.'%')->orderBy('nomePessoa','asc')->paginate(30);
+
         $totalPessoas = Pessoa::all()->count();
         return view('pessoas.index', compact('pessoas', 'totalPessoas'));
     }
 
     public function create()
     {
-        return view('pessoas.create');
+        $UFs = DB::table('uf')->get();
+        return view('pessoas.create', compact('UFs'));
     }
 
 
     public function store(Request $request)
     {
-
-      // $endereco = $request->toArray();
-
         $input = $request->toArray();
-        //Pessoa::create($input);
+
         $input = str_replace(".","", $input);
         $input = str_replace("-","", $input);
         $input = str_replace("/","", $input);
 
         $idPessoa = Pessoa::create($input);
-        // dd($idPessoa);
+
         $input['idPessoa'] = $idPessoa;
         $input['idPessoa'] = $idPessoa->idPessoa;
-        // dd($input);
+
         Endereco::create($input);
-        /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
-            // $idUsuario=User::create($input);
-            // dd($idUsuario->id);
-        /* COMO RECUPERAR ID DO USUÁRIO APÓS UM CREATE */
+
         return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa cadastrada com sucesso!');
     }
 
@@ -75,8 +62,8 @@ class PessoaController extends Controller
         }
 
         $idEndereco = DB::table('enderecos')->select('idEndereco')->where('idPessoa', '=', $idPessoa)->first();
-        $endereco = Endereco::find($idEndereco->idEndereco);
-        $endereco->delete();
+        $enderecos = Endereco::find($idEndereco->idEndereco);
+        $enderecos->delete();
 
         $pessoas = Pessoa::find($idPessoa);
         $pessoas->delete();
@@ -87,7 +74,10 @@ class PessoaController extends Controller
     public function edit($idPessoa)
     {
         $pessoas = Pessoa::find($idPessoa);
-        return view('pessoas.edit', compact('pessoas'));
+        $idEndereco = DB::table('enderecos')->select('idEndereco')->where('idPessoa', '=', $idPessoa)->first();
+        $enderecos = Endereco::find($idEndereco->idEndereco);
+        $UFs = DB::table('uf')->get();
+        return view('pessoas.edit', compact('pessoas', 'enderecos', 'UFs'));
     }
 
     public function update(Request $request, $idPessoa)

@@ -1,15 +1,17 @@
 
 function controleTipo() {
+    let cpf = document.getElementById("div-cpfPessoa")
+    let cnpj = document.getElementById('div-cnpjPessoa')
     var tipoPessoa = document.getElementById("tipoPessoa").value;
     // document.getElementById("demo").innerHTML = "You selected: " + tipoPessoa;
     if (tipoPessoa == "J") {
-        document.getElementById("div-cpfPessoa").style.display = "none";
-        document.getElementById("div-cpfPessoa").required = false;
-        document.getElementById('div-cnpjPessoa').style.display = "block";
-        document.getElementById("div-cnpjPessoa").required = true;
+        cpf.style.display = "none";
+        cpf.required = false;
+        cnpj.style.display = "block";
+        cnpj.required = true;
 
         //APAGAR CONTEÚDO DOS CAMPOS
-        document.getElementById('cpfPessoa').value=("");
+        cpf.value=("");
         document.getElementById('nomePessoa').value=("");
         document.getElementById('telefonePessoa').value=("");
         document.getElementById('cepEndereco').value=("");
@@ -22,13 +24,13 @@ function controleTipo() {
 
     }
     else {
-        document.getElementById("div-cpfPessoa").style.display = "block";
-        document.getElementById('div-cnpjPessoa').style.display = "none";
-        document.getElementById("div-cpfPessoa").required = false;
-        document.getElementById("div-cpfPessoa").required = true;
+        cpf.style.display = "block";
+        cpf.required = true;
+        cnpj.style.display = "none";
+        cnpj.required = false;
 
         //APAGAR CONTEÚDO DOS CAMPOS
-        document.getElementById('cnpjPessoa').value=("");
+        cnpj.value=("");
         document.getElementById('nomePessoa').value=("");
         document.getElementById('telefonePessoa').value=("");
         document.getElementById('cepEndereco').value=("");
@@ -40,6 +42,28 @@ function controleTipo() {
         document.getElementById('ufEndereco').value=("");
     }
 };
+
+function controleTipoAoEntrarEdit() { 
+    let cpf = document.getElementById("div-cpfPessoa")
+    let cnpj = document.getElementById("div-cnpjPessoa")
+    let tipoPessoa = document.getElementById("tipoPessoa").value;
+
+    if (tipoPessoa == "J") {
+        cnpj.style.display = "block";
+        cnpj.required = true;
+        cpf.style.display = "none";
+        cpf.required = false;
+        let inputCnpj = document.getElementById('cnpjPessoa');
+        let inputCnpjValue = inputCnpj.value
+        inputCnpj.value=(inputCnpjValue.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5"));
+    }
+    else {
+        cpf.style.display = "block";
+        cpf.required = true;
+        cnpj.style.display = "none";
+        cnpj.required = false;
+    }
+}
 
 /* WEBSERVICE ENDEREÇO */
 function limpaFormularioCep() {
