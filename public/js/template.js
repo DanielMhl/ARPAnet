@@ -53,9 +53,6 @@ function controleTipoAoEntrarEdit() {
         cnpj.required = true;
         cpf.style.display = "none";
         cpf.required = false;
-        let inputCnpj = document.getElementById('cnpjPessoa');
-        let inputCnpjValue = inputCnpj.value
-        inputCnpj.value=(inputCnpjValue.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5"));
     }
     else {
         cpf.style.display = "block";

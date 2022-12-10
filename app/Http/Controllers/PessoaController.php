@@ -84,11 +84,15 @@ class PessoaController extends Controller
     {
         $input = $request->toArray();
         $pessoas = Pessoa::find($idPessoa);
+        $idEndereco = DB::table('enderecos')->select('idEndereco')->where('idPessoa', '=', $idPessoa)->first();
+        $enderecos = Endereco::find($idEndereco->idEndereco);
 
         $pessoas->fill($input);
         $pessoas->save();
 
-        return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa alterada com sucesso!');
+        $enderecos->fill($input);
+        $enderecos->save();
 
+        return redirect()->route('pessoas.index')->with('Sucesso', 'Pessoa alterada com sucesso!');
     }
 }
