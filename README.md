@@ -1,66 +1,35 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ARPAnet - Sistema de Gerenciamento de Reciclagem
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+O sistema foi desenvolvido pelos alunos do 6° Período de Sistemas de Informação do Centro Universitário do Rio São Francisco - UniRios: Daniel M, Diego A., Gabriel C. e Pedro G. com contribuição de Rodrigo M. como consultor. Sob orientação do Professor Edemilton Galindo da disciplina de Liguagem de Programação Avançada.
 
-## About Laravel
+Nesse projeto foram utilizados o Framework Laravel, HTML5, CSS3 e Bootstrap. Foi idealizado para servir como um sistema interno de gerenciamento para a Alternativa de Reciclagem de Paulo Afonso - ARPA, dentre suas funções possui: Cadastro de Pessoas, Estoque e Venda de Produtos, Cadastro de Usuário (sendo Administrador ou Comum) e um Dashboard para acompanhamento financeiro.   
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Tela de Login:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![image](https://user-images.githubusercontent.com/89428595/216102068-789b3870-a6e9-4eeb-a7ec-c5bc6fc709ab.png)
 
-## Learning Laravel
+Dashboard:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![dashboard](https://user-images.githubusercontent.com/89428595/216109910-915e1e5c-7ed0-48ee-a96f-c9678e9a9945.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Cadastro de Usuário:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![image](https://user-images.githubusercontent.com/89428595/216104694-d505269a-1d6f-4006-a5c1-6673d69c6823.png)
 
-## Laravel Sponsors
+Listagem de Produtos:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![image](https://user-images.githubusercontent.com/89428595/216105267-efa8f20f-3f4d-4fc3-aee0-7c61ee2426bc.png)
 
-### Premium Partners
+Listagem de Vendas:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![vendas](https://user-images.githubusercontent.com/89428595/216106282-a7af8005-2706-4d9c-bd35-2f244754e7aa.png)
 
-## Contributing
+Listagem de Usuários:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![users](https://user-images.githubusercontent.com/89428595/216110704-e9bb2d69-1868-4afa-bab8-b3d01cd62d43.png)
 
-## Code of Conduct
+Alteração do Usuário:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![user](https://user-images.githubusercontent.com/89428595/216110123-d0c010d7-e714-41f7-9d49-4b94ee6e8349.png)
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
