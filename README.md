@@ -1,8 +1,13 @@
 ARPAnet - Sistema de Gerenciamento de Reciclagem
 
-O sistema foi desenvolvido pelos alunos do 6° Período de Sistemas de Informação do Centro Universitário do Rio São Francisco - UniRios: Daniel M, Diego A., Gabriel C. e Pedro G. com contribuição de Rodrigo M. como consultor. Sob orientação do Professor Edemilton Galindo da disciplina de Liguagem de Programação Avançada.
+
+O sistema foi desenvolvido pelos alunos do 6° Período de Sistemas de Informação do Centro Universitário do Rio São Francisco - UniRios: Daniel M., Diego A., Gabriel C. e Pedro G. com contribuição de Rodrigo M. como consultor. Sob orientação do Professor Edemilton Galindo da disciplina de Liguagem de Programação Avançada.
+
 
 Nesse projeto foram utilizados o Framework Laravel, HTML5, CSS3 e Bootstrap. Foi idealizado para servir como um sistema interno de gerenciamento para a Alternativa de Reciclagem de Paulo Afonso - ARPA, dentre suas funções possui: Cadastro de Pessoas, Estoque e Venda de Produtos, Cadastro de Usuário (sendo Administrador ou Comum) e um Dashboard para acompanhamento financeiro.   
+
+
+
 
 
 Tela de Login:
